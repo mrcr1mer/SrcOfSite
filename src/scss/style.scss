@@ -1,0 +1,173 @@
+//=========================================================FONTS==================================================================//
+// &display=swap&subset=cyrillic-ext
+@import url(https://fonts.googleapis.com/css?family=Bebas+Neue:regular&display=swap&subset=cyrillic-ext);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,regular,500,600,700,800,900&display=swap&subset=cyrillic-ext);
+//===========================================================================================================================//
+
+//==========================================================IMPORT=================================================================//
+@import "fonts";
+@import "icons";
+@import "null";
+@import "header";
+@import "footer";
+//===========================================================================================================================//
+
+//========================================================VARS===================================================================//
+$mainColor: #fd7e09;
+//===========================================================================================================================//
+
+//==========================================================BODY=================================================================//
+html {
+	&::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: #191919;
+	}
+	&::-webkit-scrollbar-thumb {
+		border-radius: 5px;
+		background-color: $mainColor;
+		&:hover {
+			background-color: #ff5100;
+		}
+		&:active {
+			background-color: #8b2f12;
+		}
+	}
+	scrollbar-color: $mainColor #191919;
+	scrollbar-width: thin;
+}
+body {
+	font-family: Montserrat;
+	color: #fff;
+	background-color: #191919;
+	&.lock {
+		overflow: hidden;
+	}
+	&.burger-lock {
+		overflow: hidden;
+	}
+}
+.wrapper {
+	background: linear-gradient(90deg, rgba(66, 66, 66, 1) 0%, rgba(15, 15, 15, 1) 100%, rgba(15, 15, 15, 1) 100%) no-repeat;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+.main {
+	position: relative;
+	z-index: 2;
+	flex: 1 1 auto;
+}
+//===========================================================================================================================//
+
+//===========================================================BACKGROUND================================================================//
+.ibg {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	img {
+		display: none;
+	}
+}
+.bg {
+	filter: brightness(0.15);
+	position: absolute;
+	top: 230px;
+	right: -150px;
+	@media (max-width: 1024px) {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+.bg-chat {
+	filter: brightness(0.5);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+//===========================================================================================================================//
+
+//===========================================================CLASSES================================================================//
+.container {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0px 20px;
+	@media (max-width: 1550px) {
+		max-width: 1050px;
+	}
+	@media (max-width: 479px) {
+		padding: 0px 10px;
+	}
+}
+.container-chat {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0px 15px;
+	@media (max-width: 1550px) {
+		max-width: 1050px;
+	}
+}
+.btn {
+	font-weight: 800;
+	width: 100%;
+	background-color: $mainColor;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.4s ease 0s;
+	@media (min-width: 1025px) {
+		&:hover {
+			background-color: #ff5100;
+		}
+		&:active {
+			background-color: #703a07;
+		}
+	}
+}
+.icon-chat {
+	display: none;
+	@media (max-width: 1024px) {
+		display: block;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: $mainColor;
+		font-size: 40px;
+		color: #fff;
+		position: fixed;
+		bottom: 10%;
+		right: 20px;
+		z-index: 9;
+		opacity: 0;
+		visibility: hidden;
+		@media (max-width:767px){
+			width: 50px;
+			height: 50px;
+			font-size: 30px;
+		}
+		@media (max-width:479px){
+			right: 10px;
+		}
+	}
+}
+//===========================================================================================================================//
+
+//===========================================================IMPORT================================================================//
+@import "about";
+@import "aside";
+@import "chat";
+@import "news";
+@import "currentNews";
+@import "profile";
+@import "popup";
+//===========================================================================================================================//

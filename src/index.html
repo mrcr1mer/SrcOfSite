@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"О клане"
+})
+
+<body>
+	<div class="wrapper">
+		<div class="bg"><img src="@img/bg.png" alt=""></div>
+		@@include('html/header.html',{})
+		<main class="main">
+			<div class="container">
+				<div class="main__body">
+					<section class="about">
+						@@include('html/swiper.html',{})	
+						<div class="about__content">
+							<h2 class="about__title">Немного о нас</h2>
+							<div class="about__info">
+								<p>
+									Клан Platinum Dragons, в прошлом SteelLegion, был основан в 2018 году, тройкой друзей, которые
+									горели одним делом, нашим девизом всегда было, «Верность и семейная атмосфера, залог успешного
+									сообщества»
+								</p>
+								<p>
+									Мы хотим, что бы игроки CODM могли найти для себя место, где каждому рады, все готовы выслушать
+									и помочь, какая бы ситуация не была. У нас вы найдёте атмосферу теплоты и уюта, будущих друзей и
+									вам никогда не будет скучно )
+								</p>							
+							</div>
+						</div>
+						<a href="#mainPopup" class="about__btn btn popup-link">Присоединяйся</a>
+					</section>
+					@@include('html/aside.html',{})
+				</div>
+			</div>
+		</main>
+		@@include('html/footer.html',{})
+		<a href="chat.html" class="icon-chat _icon-chat"></a>
+	</div>
+	@@include('html/popup.html',{})
+	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+	<script src="js/app.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,177 @@
+<div class="popup" id="mainPopup">
+	<div class="popup__body">
+		<div class="popup__content">
+			<a href="" class="popup__close close-popup"></a>
+			<nav class="popup__tabs">
+				<div data-tab="1" class="popup__tabs-tab">Авторизация</div>
+				<span>/</span>
+				<div data-tab="2" class="popup__tabs-tab active">Регистрация</div>
+			</nav>
+			<form data-tab-content="1" action="#" class="popup__form popup__form_main">
+				<div class="popup__items">
+					<div class="popup__item">
+						<input type="email" name="email" class="popup__input" placeholder="E-Mail" required>
+					</div>
+					<div class="popup__item">
+						<input type="password" name="password" class="popup__input" placeholder="Пароль">
+					</div>
+					<div class="popup__item popup__item_password">
+						<div class="popup__radio">
+							<input checked type="checkbox" id="inputRemember" name="checkboxRemember" class="popup__input-checkbox" value="remember">
+							<label class="popup__label-radio" for="inputRemember">Запомнить</label>
+						</div>
+						<a href="#recoverPasswordPopup" class="popup__password popup-link">Забыли пароль?</a>
+					</div>
+				</div>
+				<button type="submit" class="popup__btn btn">Войти на сайт</button>
+			</form>
+			<form data-tab-content="2" action="#" class="popup__form popup__form_main active">
+				<div class="popup__items">
+					<div class="popup__item">
+						<label class="popup__label-input" for="inputName">Ник</label>
+						<input type="text" class="popup__input" id="inputName" name="name" placeholder="Ник">
+					</div>
+					<div class="popup__item">
+						<label class="popup__label-input" for="inputUID">UID</label>
+						<input type="text" class="popup__input" id="inputUID" name="UID"
+							placeholder="скопирeйте в игровом профиле">
+					</div>
+					<div class="popup__item">
+						<label class="popup__label-input" for="inputEmail">E-Mail</label>
+						<input type="email" class="popup__input" id="inputEmail" name="email" placeholder="E-Mail" required>
+					</div>
+					<div class="popup__item">
+						<label class="popup__label-input" for="inputPassword">Пароль</label>
+						<input type="password" class="popup__input" id="inputPassword" name="password" placeholder="Пароль">
+					</div>
+					<div class="popup__item">
+						<label class="popup__label-input" for="inputPasswordAgain">Повтор</label>
+						<input type="password" class="popup__input" id="inputPasswordAgain" name="password-again" placeholder="Повторите пароль">
+					</div>
+				</div>
+				<button type="submit" class="popup__btn btn">Зарегистрироваться</button>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="popup" id="recoverPasswordPopup">
+	<div class="popup__body">
+		<div class="popup__content">
+			<a href="" class="popup__close close-popup"></a>
+			<div class="popup__title">Восстановить пароль</div>
+			<form action="#" class="popup__form">
+				<div class="popup__items">
+					<div class="popup__item">
+						<input type="email" name="email" class="popup__input" placeholder="E-Mail" required>
+					</div>
+					<div class="popup__item">
+						<input type="text" name="captcha" class="popup__input" placeholder="Введите код с картинки">
+					</div>
+				</div>
+				<button type="submit" class="popup__btn btn">Отправить</button>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="popup" id="newPasswordPopup">
+	<div class="popup__body">
+		<div class="popup__content">
+			<a href="" class="popup__close close-popup"></a>
+			<div class="popup__title">Поменяйте пароль</div>
+			<form action="#" class="popup__form">
+				<div class="popup__items">
+					<div class="popup__item">
+						<input type="password" name="password" class="popup__input" placeholder="Пароль">
+					</div>
+					<div class="popup__item">
+						<input type="password" name="password-again" class="popup__input" placeholder="Подтвердите пароль">
+					</div>
+				</div>
+				<button type="submit" class="popup__btn btn">Сменить</button>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="popup" id="notifyPopup">
+	<div class="popup__body">
+		<div class="popup__content">
+			<a href="" class="popup__close close-popup"></a>
+			<div class="popup__title">Уведомление</div>
+			<div class="popup__message">
+				<p>Вам отправили письмо на восстановление пароля на почтовый ящик pochta@mail.ru. Бла бла бла и так далее</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup" id="notifyTimerPopup">
+	<div class="popup__body">
+		<div class="popup__content">
+			<a href="" class="popup__close close-popup"></a>
+			<div class="popup__title">Уведомление</div>
+			<form action="#" class="popup__form">
+				<div class="popup__items">
+					<div class="popup__message">
+						<p>На почту test@mail.ru было отправлено письмо для востановления пароля.</p>
+						<p>Повторно отправить письмо: <span>4:59</span> мин</p>
+						<p>Осталось попыток: <span>5</span></p>
+					</div>
+				</div>
+				<button type="submit" class="popup__btn btn">Отправить</button>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="popup" id="notifyLimitPopup">
+	<div class="popup__body">
+		<div class="popup__content">
+			<a href="" class="popup__close close-popup"></a>
+			<div class="popup__title">Уведомление</div>
+			<div class="popup__message">
+				<p>Не получилось добавить игрока(ов) в команду !</p>
+				<p>Привышен лимит игроков. Максимум вы можете добавить <span>1</span> игрока.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup" id="confirmExitPopup">
+	<div class="popup__body">
+		<div class="popup__content">
+			<a href="" class="popup__close close-popup"></a>
+			<div class="popup__title">Уведомление</div>
+			<form action="#" class="popup__form">
+				<div class="popup__items">
+					<p>Вы уверены что хотите выйти из профиля?</p>
+				</div>
+				<div class="popup__buttons">
+					<div class="popup__button">
+						<button type="submit" class="popup__btn btn">ДА</button>
+					</div>
+					<div class="popup__button">
+						<button type="button" class="popup__btn btn close-popup">НЕТ</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="popup" id="confirmRemovePopup">
+	<div class="popup__body">
+		<div class="popup__content">
+			<a href="" class="popup__close close-popup"></a>
+			<div class="popup__title">Уведомление</div>
+			<form action="#" class="popup__form">
+				<div class="popup__items">
+					<p>Вы уверены что хотите удалить (профиль. команду)?</p>
+				</div>
+				<div class="popup__buttons">
+					<div class="popup__button">
+						<button type="submit" class="popup__btn btn">ДА</button>
+					</div>
+					<div class="popup__button">
+						<button type="button" class="popup__btn btn close-popup">НЕТ</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

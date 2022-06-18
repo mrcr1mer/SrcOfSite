@@ -1,0 +1,123 @@
+.current-news {
+	flex: 1 1 auto;
+	@media (max-width:1024px){
+		padding: 0px 70px;
+	}
+	@media (max-width:767px){
+		padding: 0;
+	}
+	// .current-news__body
+	&__body {
+		background: rgba(15, 15, 15, 0.5);
+	}
+	&__info {
+		padding: 25px;
+		@media (max-width:1024px){
+			padding: 20px;
+		}
+		@media (max-width:767px){
+			padding: 15px;
+		}
+		@media (max-width:479px){
+			padding: 10px;
+		}
+	}
+	// .current-news__image
+	&__image {
+		padding: 0px 0px 60.7% 0px;
+		transition: all 0.4s ease 0s;
+		@media (min-width:1025px){
+			&:hover{
+				box-shadow: 0px 0px 4px #fd7e09 inset;
+			}
+		}
+	}
+	// .current-news__title
+	&__title {
+		font-weight: 700;
+		font-size: 32px;
+		line-height: 125%;
+		color: $mainColor;
+		margin: 0px 0px 10px 0px;
+		@media (max-width:1550px){
+			font-size: 30px;
+		}
+		@media (max-width:1024px){
+			font-size: 28px;
+		}
+		@media (max-width:767px){
+			font-size: 26px;
+		}
+		@media (max-width:640px){
+			margin: 0px 0px 5px 0px;
+			font-size: 24px;
+		}
+		@media (max-width:479px){
+			font-size: 20px;
+		}
+	}
+	// .current-news__text
+	&__text {
+		font-weight: 500;
+		font-size: 26px;
+		line-height: 125%;
+		margin: 0px 0px 20px 0px;
+		a {
+			color: $mainColor;
+			transition: all 0.4s ease 0s;
+			&:hover{
+				color: #ff5100;
+			}
+		}
+		@media (max-width:1550px){
+			font-size: 24px;
+		}
+		@media (max-width:1024px){
+			font-size: 22px;
+		}
+		@media (max-width:767px){
+			font-size: 20px;
+		}
+		@media (max-width:640px){
+			margin: 0px 0px 10px 0px;
+			font-size: 18px;
+		}
+		@media (max-width:479px){
+			font-size: 16px;
+		}
+	}
+	// .current-news__file
+	&__file {
+		display: inline-flex;
+		font-size: 24px;
+		line-height: 125%;
+		color: $mainColor;
+		&:hover{
+			.current-news__icon,
+			.current-news__file-link {
+				color: #ff5100;
+			}
+		}
+		@media (max-width:1550px){
+			font-size: 22px;
+		}
+		@media (max-width:1024px){
+			font-size: 20px;
+		}
+		@media (max-width:767px){
+			font-size: 18px;
+		}
+		@media (max-width:479px){
+			font-size: 16px;
+		}
+	}
+	&__icon {
+		cursor: pointer;
+		transition: all 0.4s ease 0s;
+	}
+	&__file-link {
+		color: $mainColor;
+		padding: 0px 0px 0px 5px;
+		transition: all 0.4s ease 0s;
+	}
+}

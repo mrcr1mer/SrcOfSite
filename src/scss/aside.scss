@@ -1,0 +1,383 @@
+$mainColor: #fd7e09;
+//---------------------------------------------------------ASIDE-----------------------------------------------------------------//
+.aside {
+	margin: 0px 0px 0px 45px;
+	flex: 0 0 60px;
+	border-left: 5px solid $mainColor;
+	padding: 10px 0px 10px 10px;
+	transition: all 1s ease 0s;
+	&.active {
+		flex: 0 0 300px;
+		padding: 10px 0px 10px 25px;
+		.aside__body {
+			display: block;
+		}
+		.aside__content {
+			max-width: 300px;
+			max-height: 1500px;
+		}
+		.aside__dots {
+			visibility: visible;
+			opacity: 1;
+		}
+		.aside__arrows {
+			width: 30px;
+			.arrow {
+				&:nth-child(1) {
+					&::before {
+						transform: rotate(45deg);
+					}
+					&::after {
+						transform: rotate(-45deg);
+					}
+				}
+				&:nth-child(3) {
+					&::before,
+					&::after {
+						left: 11px;
+					}
+				}
+				&:nth-child(2) {
+					&::before,
+					&::after {
+						opacity: 0;
+						visibility: hidden;
+					}
+				}
+			}
+		}
+		.aside__icon-chat {
+			display: none;
+		}
+	}
+	@media (max-width: 1024px) {
+		display: none;
+	}
+	// .aside__body
+	&__body {
+		overflow-x: hidden;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+	}
+	&__arrows {
+		background-color: transparent;
+		margin: 0px 0px 30px 0px;
+		width: 40px;
+		height: 30px;
+		position: relative;
+		&:hover {
+			.arrow {
+				&::before,
+				&::after {
+					background-color: #ff5100;
+				}
+			}
+		}
+		.arrow {
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				width: 18px;
+				height: 3px;
+				background-color: $mainColor;
+				left: 0px;
+				transition: all 0.4s ease 0s;
+			}
+			&::before {
+				transform: rotate(-45deg);
+				top: 8px;
+			}
+			&::after {
+				transform: rotate(45deg);
+				bottom: 8px;
+			}
+			&:nth-child(2) {
+				&::before,
+				&::after {
+					left: 12px;
+				}
+			}
+			&:nth-child(3) {
+				&::before,
+				&::after {
+					left: 24px;
+				}
+			}
+		}
+	}
+	&__dots {
+		opacity: 0;
+		visibility: hidden;
+		transition: all 1s ease 0s;
+		display: flex;
+		position: absolute;
+		top: 12px;
+		right: 0;
+	}
+	&__dot {
+		height: 6px;
+		width: 6px;
+		background-color: $mainColor;
+		border-radius: 50%;
+		&:not(:first-child) {
+			margin: 0px 0px 0px 17px;
+		}
+	}
+	&__content {
+		max-width: 0;
+		max-height: 0;
+		overflow: hidden;
+		transition: all 1s ease 0s;
+	}
+	// .aside__news
+	&__news {
+		margin: 0px 0px 50px 0px;
+	}
+	// .aside__title
+	&__news-title {
+		margin: 0px 0px 15px 0px;
+	}
+	// .aside__img
+	&__news-img {
+		width: 100%;
+		height: 175px;
+		margin: 0px 0px 10px 0px;
+		transition: all 0.4s ease 0s;
+		&:hover {
+			box-shadow: 0px 0px 4px #fd7e09 inset;
+		}
+	}
+	// .aside__text
+	&__news-text {
+		display: block;
+		color: #fff;
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 120%;
+		transition: all 0.4s ease 0s;
+		&:hover{
+			color: $mainColor;
+			text-decoration: underline;
+		}
+	}
+	&__icon-chat {
+		display: inline-block;
+		margin: 20px 0px 0px 0px;
+		color: $mainColor;
+		font-size: 40px;
+		transition: all 0.4s ease 0s;
+		&:hover {
+			color: #ff5100;
+		}
+	}
+}
+
+// .title-aside
+.title-aside {
+	font-weight: 900;
+	font-size: 24px;
+	display: block;
+	color: #fff;
+	transition: all 0.4s ease 0s;
+	&:hover {
+		color: $mainColor;
+	}
+}
+
+//---------------------------------------------------------ASIDE-TOURNAMENTS------------------------------------------------------------------//
+
+.aside {
+	// .aside__tournaments
+	&__tournaments {
+		margin: 0px 0px 50px 0px;
+	}
+	// .aside__tournaments-title
+	&__tournaments-title {
+		margin: 0px 0px 15px 0px;
+	}
+	// .aside__tournaments-body
+	&__tournaments-body {
+		& > *:not(:last-child) {
+			margin: 0px 0px 15px 0px;
+		}
+	}
+	// .aside__tournaments-item
+	&__tournaments-item {
+		min-height: 50px;
+		display: flex;
+	}
+	// .aside__tournaments-type
+	&__tournaments-type {
+		font-weight: 700;
+		font-size: 20px;
+		text-transform: uppercase;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		padding: 10px;
+		flex: 0 0 60px;
+		background-color: #191919;
+	}
+	// .aside__tournaments-name
+	&__tournaments-name {
+		padding: 10px;
+		color: #fff;
+		font-weight: 600;
+		font-size: 16px;
+		letter-spacing: 0.05em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		background-color: $mainColor;
+		flex: 1 1 auto;
+		transition: all 0.4s ease 0s;
+		&:hover{
+			background-color: #ff5100;
+		}
+	}
+}
+
+//---------------------------------------------------------ASIDE-CHAT-----------------------------------------------------------------//
+
+.chat-aside {
+	// .chat__title
+	&__title {
+		margin: 0px 0px 15px 0px;
+	}
+	// .chat__wrapper
+	&__body {
+		padding: 10px;
+		background-color: rgba(5, 6, 6, 0.7);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		height: 540px;
+	}
+	&__content {
+		flex: 1 1 auto;
+		overflow-y: auto;
+		padding: 0px 10px 0px 0px;
+		&::-webkit-scrollbar {
+			width: 4px;
+		}
+		&::-webkit-scrollbar-track {
+			background-color: transparent;
+		}
+		&::-webkit-scrollbar-thumb {
+			border-radius: 5px;
+			background-color: #fff;
+			&:hover {
+				background-color: rgb(204, 204, 204);
+			}
+			&:active {
+				background-color: rgb(122, 122, 122);
+			}
+		}
+		scrollbar-color: #fff transparent;
+		scrollbar-width: thin;
+	}
+	// .chat__user
+	&__user {
+		margin: 0px 0px 28px 0px;
+		&_me {
+			.chat-aside__user-data {
+				flex-direction: row-reverse;
+			}
+			.chat-aside__user-items {
+				padding: 0px 10px 0px 0px;
+				text-align: right;
+			}
+			.chat-aside__post {
+				color: #ff0000;
+			}
+			.chat-aside__user-msg {
+				border-radius: 10px 0px 10px 10px;
+			}
+		}
+	}
+	// .chat__user-data
+	&__user-data {
+		display: flex;
+		align-items: center;
+		margin: 0px 0px 10px 0px;
+	}
+	// .chat__user-avatar
+	&__user-avatar {
+		width: 50px;
+		height: 50px;
+		display: block;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	// .chat__user-items
+	&__user-items {
+		flex: 1 1 auto;
+		padding: 0px 0px 0px 10px;
+	}
+	// .chat__nickname
+	&__nickname {
+		font-weight: 700;
+		font-size: 18px;
+		margin: 0px 0px 5px 0px;
+	}
+	// .chat__post
+	&__post {
+		font-weight: 600;
+		font-size: 16px;
+		color: #05ff00;
+	}
+	// .chat__user-msg
+	&__user-msg {
+		background: #191919;
+		border-radius: 0px 10px 10px 10px;
+		padding: 10px;
+	}
+	// .chat__msg-time
+	&__msg-time {
+		font-size: 11px;
+		letter-spacing: 0.02em;
+		color: #626262;
+		margin: 0px 0px 5px 0px;
+	}
+	// .chat__msg
+	&__msg {
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 16px;
+		letter-spacing: 0.02em;
+	}
+	// .chat__form
+	&__form {
+		padding: 0px 5px 0px 0px;
+		display: flex;
+		align-items: center;
+		margin: 10px 0px 0px 0px;
+	}
+	// .chat__input
+	&__input {
+		flex: 1 1 auto;
+		border-radius: 10px;
+		margin: 0px 5px 0px 0px;
+		background-color: #05080a;
+		padding: 15px 10px;
+		font-size: 16px;
+		letter-spacing: 0.04em;
+		color: #fff;
+		transition: all 0.2s ease 0s;
+		font-weight: 500;
+		&:focus {
+			box-shadow: 0px 0px 6px #d9d9d9;
+		}
+	}
+	&__btn {
+		background-color: transparent;
+	}
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"Новости"
+})
+
+<body>
+	<div class="wrapper">
+		<div class="bg"><img src="@img/bg.png" alt=""></div>
+		@@include('html/header.html',{})
+		<main class="main">
+			<div class="container">
+				<div class="main__body">
+					<section class="current-news">
+						<div class="current-news__body">
+							<div class="current-news__image ibg"><img src="@img/aside/01.jpg" alt=""></div>
+							<div class="current-news__info">
+								<div class="current-news__title">Королевская битва. Новый Сезон.</div>
+								<div class="current-news__text">
+									Один из жанров массовых многопользовательских онлайн-игр, совмещающий в себе элементы симулятора выживания с режимом last man standing. «<a href="#">Королевская битва</a>» сталкивает большое количество управляемых игроками персонажей с минимальным набором снаряжения на ограниченной карте; игроки должны искать на карте оружие и уничтожать противников, пока в игре не останется только один.
+								</div>
+								<div class="current-news__file">
+									<div class="current-news__icon _icon-file"></div>
+									<a href="files/статистика.xlsx" class="current-news__file-link">Таблица нововедений</a>
+								</div>
+							</div>
+						</div>
+					</section>
+					@@include('html/aside2.html',{})
+				</div>
+			</div>
+		</main>
+		@@include('html/footer.html',{})
+		<a href="chat.html" class="icon-chat _icon-chat"></a>
+	</div>
+	@@include('html/popup.html',{})
+	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+	<script src="js/app.min.js"></script>
+</body>
+
+</html>

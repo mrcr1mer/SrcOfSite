@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"Новости"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/header.html',{})
+		<main class="main">
+			<div class="container">
+				<div class="main__body">
+					<section class="news">
+						<div class="news__items">
+							<div class="news__item">
+								<div class="news__image ibg"><img src="@img/aside/01.jpg" alt=""></div>
+								<h3><a href="currentNews.html" class="news__title">Королевская битва. Новый Сезон.</a></h3>
+							</div>
+							<div class="news__item">
+								<div class="news__image ibg"><img src="@img/aside/01.jpg" alt=""></div>
+								<h3><a href="currentNews.html" class="news__title">Турнир. Убей или умри. 12.05.22</a></h3>
+							</div>
+						</div>
+						<div class="news__items">
+							<div class="news__item">
+								<div class="news__image ibg"><img src="@img/aside/01.jpg" alt=""></div>
+								<h3><a href="currentNews.html"  class="news__title">Call of Duty Mobile релиз нового режима. Королевский таракан</a></h3>
+							</div>
+							<div class="news__item">
+								<div class="news__image ibg"><img src="@img/aside/01.jpg" alt=""></div>
+								<h3><a href="currentNews.html" class="news__title">Турнир. Убей или умри. 12.05.22</a></h3>
+							</div>
+						</div>
+						<div class="news__pagination pagination">
+							<a href="#" class="pagination__btn _icon-left-arrow"></a>
+							<ul class="pagination__list">
+								<li class="pagination__numb"><a href="#">1</a></li>
+								<li class="pagination__dots"><span>...</span></li>
+								<li class="pagination__numb"><a href="#">3</a></li>
+								<li class="pagination__numb active"><a href="#">4</a></li>
+								<li class="pagination__numb"><a href="#">5</a></li>
+								<li class="pagination__dots"><span>...</span></li>
+								<li class="pagination__numb"><a href="#">7</a></li>
+							</ul>
+							<a href="#" class="pagination__btn _icon-right-arrow"></a>
+						</div>
+					</section>
+					@@include('html/aside2.html',{})
+				</div>
+			</div>
+		</main>
+		@@include('html/footer.html',{})
+		<a href="chat.html" class="icon-chat _icon-chat"></a>
+	</div>
+	@@include('html/popup.html',{})
+	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+	<script src="js/app.min.js"></script>
+</body>
+
+</html>
