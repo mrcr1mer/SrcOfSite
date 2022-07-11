@@ -1,4 +1,3 @@
-$mainColor: #fd7e09;
 .popup {
 	position: fixed;
 	left: 0;
@@ -51,7 +50,8 @@ $mainColor: #fd7e09;
 		}
 		@media (max-width: 1024px) {
 			padding: 20px;
-			min-height: 100vh;
+			//min-height: 100vh;
+			height: calc(var(--vh, 1vh) * 100);
 			flex: 0 0 100%;
 		}
 		@media (max-width: 767px) {

@@ -1,0 +1,496 @@
+.members {
+	// .members__leaders
+	&__leaders {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	// .members__leader
+	&__leader {
+		&:nth-child(1) {
+			flex: 0 1 100%;
+		}
+		&:nth-child(2),
+		&:nth-child(3) {
+			flex: 0 1 50%;
+		}
+		flex: 0 1 33.333%;
+		margin: 0px 0px 30px 0px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@media (max-width: 1024px) {
+			margin: 0px 0px 25px 0px;
+		}
+		@media (max-width: 767px) {
+			margin: 0px 0px 15px 0px;
+			&:nth-child(2),
+			&:nth-child(3) {
+				flex: 0 1 25%;
+			}
+			flex: 0 1 25%;
+		}
+		@media (max-width: 479px) {
+			margin: 0px 0px 10px 0px;
+			&:nth-child(2),
+			&:nth-child(3) {
+				flex: 0 1 50%;
+			}
+			flex: 0 1 50%;
+		}
+	}
+	// .members__avatar
+	&__avatar {
+		margin: 0px 0px 5px 0px;
+		width: 150px;
+		height: 150px;
+		position: relative;
+		border-radius: 50%;
+		overflow: hidden;
+		transition: all 0.4s ease 0s;
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+		}
+		@media (min-width: 1025px) {
+			&:hover {
+				filter: brightness(1.5);
+			}
+		}
+		@media (max-width: 1550px) {
+			width: 130px;
+			height: 130px;
+		}
+		@media (max-width: 767px) {
+			width: 110px;
+			height: 110px;
+		}
+		@media (max-width: 640px) {
+			width: 85px;
+			height: 85px;
+		}
+		@media (max-width: 479px) {
+			height: 70px;
+			width: 70px;
+		}
+	}
+	// .members__data
+	&__data {
+		font-size: 22px;
+		line-height: 130%;
+		text-align: center;
+		@media (max-width: 1550px) {
+			font-size: 20px;
+		}
+		@media (max-width: 767px) {
+			font-size: 16px;
+		}
+		@media (max-width: 640px) {
+			font-size: 14px;
+		}
+		&_nickname {
+			font-weight: 700;
+		}
+		&_name {
+			display: none;
+			@media (min-width: 1025px) {
+				display: block;
+			}
+		}
+	}
+	// .members__clan
+	&__clan {
+	}
+	// .members__contacts
+	&__contacts {
+	}
+}
+
+// ==================================CLAN===============================================================================
+
+.clan {
+	margin: 0px 0px 40px 0px;
+	@media (max-width: 1024px) {
+		margin: 0px 0px 25px 0px;
+	}
+	@media (max-width: 767px) {
+		margin: 0px 0px 15px 0px;
+	}
+	// .clan__header
+	&__header {
+		background-color: #121212;
+		min-height: 70px;
+		padding: 0px 20px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-weight: 600;
+		color: $mainColor;
+		@media (max-width: 1024px) {
+			min-height: 60px;
+			padding: 0px 15px;
+		}
+		@media (max-width: 479px) {
+			min-height: 50px;
+			padding: 0px 10px;
+		}
+	}
+	// .clan__title
+	&__title {
+		font-size: 28px;
+		@media (max-width: 1550px) {
+			font-size: 24px;
+		}
+		@media (max-width: 767px) {
+			font-size: 20px;
+		}
+		@media (max-width: 479px) {
+			font-size: 16px;
+		}
+	}
+	// .clan__total-online
+	&__total-online {
+		font-size: 20px;
+		@media (max-width: 1550px) {
+			font-size: 18px;
+		}
+		@media (max-width: 767px) {
+			font-size: 16px;
+		}
+		@media (max-width: 479px) {
+			font-size: 14px;
+		}
+	}
+	// .clan__body
+	&__body {
+		max-height: 300px;
+		overflow-y: auto;
+		overflow-x: hidden;
+		@media (max-width: 1024px) {
+			max-height: 250px;
+		}
+		@media (max-width: 479px) {
+			max-height: 200px;
+		}
+		&::-webkit-scrollbar {
+			width: 4px;
+		}
+		&::-webkit-scrollbar-track {
+			background-color: transparent;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: $mainColor;
+			&:hover {
+				background-color: #ff5100;
+			}
+			&:active {
+				background-color: #8b2f12;
+			}
+		}
+		scrollbar-color: $mainColor transparent;
+		scrollbar-width: thin;
+	}
+	// .clan__list
+	&__list {
+		list-style: none;
+		counter-reset: item;
+	}
+	// .clan__item
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-weight: 600;
+		background: rgba(20, 20, 20, 0.65);
+		min-height: 60px;
+		padding: 10px 20px 10px 60px;
+		position: relative;
+		font-size: 20px;
+		&:not(:last-child) {
+			border-bottom: 1px solid #121212;
+		}
+		@media (max-width: 1550px) {
+			font-size: 18px;
+		}
+		@media (max-width: 1024px) {
+			padding: 10px 15px 10px 50px;
+			min-height: 50px;
+		}
+		@media (max-width: 767px) {
+			font-size: 16px;
+		}
+		@media (max-width: 479px) {
+			min-height: 40px;
+			padding: 10px 10px 10px 30px;
+			font-size: 14px;
+		}
+		@media (max-width: 320px) {
+			font-size: 12px;
+		}
+		&::before {
+			content: counter(item) " ";
+			counter-increment: item;
+			position: absolute;
+			left: 20px;
+			@media (max-width: 1024px) {
+				left: 15px;
+			}
+			@media (max-width: 479px) {
+				left: 10px;
+			}
+		}
+	}
+	// .clan__info
+	&__info {
+		display: flex;
+		align-items: center;
+	}
+	// .clan__data
+	&__data {
+		font-weight: 500;
+		line-height: 120%;
+		flex: 0 0 160px;
+		@media (max-width: 767px) {
+			flex: 0 0 140px;
+		}
+		@media (max-width: 479px) {
+			flex: 0 0 120px;
+		}
+		@media (max-width: 320px) {
+			flex: 0 0 100px;
+		}
+		&:not(:last-child) {
+			margin: 0px 40px 0px 0px;
+			@media (max-width: 1550px) {
+				margin: 0px 20px 0px 0px;
+			}
+			@media (max-width: 479px) {
+				margin: 0px 10px 0px 0px;
+			}
+		}
+		// .clan__data_nickname
+		&_nickname {
+			font-weight: 700;
+			color: #fff;
+			transition: all 0.4s ease 0s;
+			@media (min-width: 1025px) {
+				&:hover {
+					color: $mainColor;
+				}
+			}
+		}
+		// .clan__data_name
+		&_name {
+			@media (max-width: 640px) {
+				display: none;
+			}
+		}
+	}
+	// .clan__online
+	&__online {
+		font-weight: 500;
+		// .clan__online_on
+		&_on {
+			color: rgba(5, 255, 0, 0.67);
+		}
+		// .clan__online_off
+		&_off {
+			color: #d9d9d9;
+		}
+	}
+}
+
+// ==================================CONTACTS===============================================================================
+
+.contacts {
+	// .contacts__title
+	&__title {
+		font-weight: 600;
+		font-size: 24px;
+		margin: 0px 0px 20px 0px;
+		@media (max-width:767px){
+			font-size: 20px;
+			margin: 0px 0px 10px 0px;
+		}
+		@media (max-width:479px){
+			font-size: 16px;
+		}
+	}
+	// .contacts__items
+	&__items {
+		& > *:not(:last-child){
+			margin: 0px 0px 10px 0px;
+		}
+	}
+	// .contacts__item
+	&__item {
+		background: rgba(25, 25, 25, 0.65);
+		padding: 10px 20px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@media (max-width:1024px){
+			padding: 10px 15px;
+		}
+		@media (max-width:767px){
+			padding: 10px;
+		}
+		@media (max-width:360px){
+			padding: 10px 5px;
+		}
+	}
+	// .contacts__data
+	&__data {
+		display: flex;
+		align-items: center;
+		padding: 0px 10px 0px 0px;
+	}
+	// .contacts__avatar
+	&__avatar {
+		position: relative;
+		flex: 0 0 70px;
+		height: 70px;
+		border-radius: 50%;
+		overflow: hidden;
+		transition: all 0.4s ease 0s;
+		margin: 0px 15px 0px 0px;
+		@media (min-width: 1025px) {
+			&:hover {
+				filter: brightness(1.5);
+			}
+		}
+		@media (max-width:767px){
+			flex: 0 0 60px;
+			height: 60px;
+			margin: 0px 10px 0px 0px;
+		}
+		@media (max-width:479px){
+			flex: 0 0 50px;
+			height: 50px;
+			margin: 0px 5px 0px 0px;
+		}
+		@media (max-width:360px){
+			flex: 0 0 40px;
+			height: 40px;
+		}
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+		}
+	}
+	// .contacts__info
+	&__info {
+		& > *:not(:last-child){
+			margin: 0px 0px 5px 0px;
+		}
+		max-width: 150px;
+		@media (max-width:767px){
+			max-width: 120px;
+		}
+		@media (max-width:479px){
+			max-width: 100px;
+		}
+		@media (max-width:360px){
+			& > *:not(:last-child){
+				margin: 0px 0px 0px 0px;
+			}
+			max-width: 90px;
+		}
+		@media (max-width:290px){
+			max-width: 80px;
+		}
+	}
+	// .contacts__nickname
+	&__nickname {
+		font-size: 21px;
+		font-weight: 700;
+		@media (max-width:767px){
+			font-size: 18px;
+		}
+		@media (max-width:479px){
+			font-size: 16px;
+		}
+		@media (max-width:360px){
+			font-size: 14px;
+		}
+	}
+	// .contacts__name
+	&__name {
+		color: #727272;
+		font-size: 19px;
+		line-height: 110%;
+		@media (max-width:767px){
+			font-size: 16px;
+		}
+		@media (max-width:479px){
+			font-size: 14px;
+		}
+		@media (max-width:360px){
+			font-size: 12px;
+		}
+		
+	}
+	// .contacts__socials
+	&__socials {
+		display: flex;
+		align-items: center;
+	}
+	// .contacts__social
+	&__social {
+		font-size: 45px;
+		color: $mainColor;
+		transition: all 0.4s ease 0s;
+		&:hover {
+			color: #ff5100;
+		}
+		&:nth-child(1) {
+			font-size: 35px;
+		}
+		&:nth-child(3) {
+			font-size: 55px;
+		}
+		&:not(:last-child) {
+			margin: 0px 20px 0px 0px;
+			@media (max-width: 1024px) {
+				margin: 0px 10px 0px 0px;
+			}
+		}
+		@media (max-width:767px){
+			font-size: 40px;
+			&:nth-child(1) {
+				font-size: 30px;
+			}
+			&:nth-child(3) {
+				font-size: 50px;
+			}
+		}
+		@media (max-width:479px){
+			font-size: 30px;
+			&:nth-child(1) {
+				font-size: 23px;
+			}
+			&:nth-child(3) {
+				font-size: 37px;
+			}
+			&:not(:last-child){
+				margin: 0px 5px 0px 0px;
+			}
+		}
+		@media (max-width:360px){
+			font-size: 25px;
+			&:nth-child(1) {
+				font-size: 17px;
+			}
+			&:nth-child(3) {
+				font-size: 30px;
+			}
+		}
+	}
+}

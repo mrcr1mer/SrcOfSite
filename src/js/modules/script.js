@@ -2,34 +2,72 @@
 const iconBurger = document.querySelector('.icon-header');
 const menu = document.querySelector('.menu');
 const logoHeader = document.querySelector('.header__top');
+//const chatMenu = document.createElement('li');
 if (iconBurger) {
 	iconBurger.addEventListener("click", () => {
-		document.body.classList.toggle('burger-lock');
-
 		if (iconBurger.classList.contains('active')) iconBurger.classList.add('reverse');
 		else iconBurger.classList.remove('reverse');
 
+		document.body.classList.toggle('burger-lock');
 		logoHeader.classList.toggle('active');
 		iconBurger.classList.toggle('active');
 		menu.classList.toggle('active');
+
+		// if (iconBurger.classList.contains('active')) {
+		// 	chatMenu.innerHTML = `<a href="chat.html" class="menu__link">Чат</a>`;
+		// 	document.querySelector('.menu__list').append(chatMenu);
+		// } else {
+		// 	chatMenu.remove();
+		// }
+
+		// const mediaQuery = window.matchMedia('(max-width: 1024px)')
+		// function tabletChange(e) {
+		// 	if (e.matches) {
+		// 		chatMenu.innerHTML = `<a href="chat.html" class="menu__link">Чат</a>`;
+		// 		document.querySelector('.menu__list').append(chatMenu);
+		// 	}
+		// }
+		// mediaQuery.addEventListener("change", tabletChange);
+		// tabletChange(mediaQuery);
+
+		// if (window.matchMedia("(max-width: 1024px)").matches) {
+		// 	chatMenu.innerHTML = `<a href="chat.html" class="menu__link">Чат</a>`;
+		// 	document.querySelector('.menu__list').append(chatMenu);
+		// } else {
+		// 	chatMenu.remove();
+		// }		
 	})
 }
+
+
+
+// ========================MENU-ACTIVE===============================
+const menuItems = document.querySelectorAll('.menu__link');
+const local = window.location.href;
+
+menuItems.forEach(element => {
+	if (element.href === local) {
+		element.classList.add('active');
+	} else {
+		element.classList.remove('active');
+	}
+});
 
 
 // ========================ASIDE-SPOILER===============================
 const aside = document.querySelector('.aside');
 const asideButton = document.querySelector('.aside__arrows');
 // Блок новостей
-const newsItems = document.querySelectorAll('.news__items');
+const articles = document.querySelectorAll('.articles');
 if (asideButton) {
 	asideButton.addEventListener('click', change);
 	function change() {
 		aside.classList.toggle('active');
 		// Вешает на блоки новостей active
-		if (newsItems.length > 0) {
-			for (let index = 0; index < newsItems.length; index++) {
-				const newsItem = newsItems[index];
-				newsItem.classList.toggle('active');
+		if (articles.length > 0) {
+			for (let index = 0; index < articles.length; index++) {
+				const article = articles[index];
+				article.classList.toggle('active');
 			}
 		}
 	}
@@ -73,21 +111,3 @@ if (inputs.length > 0) {
 		})
 	}
 }
-
-
-// ========================ICON-CHAT===============================
-let iconChat = document.querySelector('.icon-chat');
-let timeOut;
-if (iconChat) {
-	document.addEventListener('scroll', function () {
-		iconChat.style.opacity = 1;
-		iconChat.style.visibility = "visible";
-		if (timeOut != undefined) clearTimeout(timeOut)
-		timeOut = setTimeout(() => {
-			iconChat.style.opacity = 0;
-			iconChat.style.visibility = "hidden";
-		}, 2500)
-	});
-	
-}
-

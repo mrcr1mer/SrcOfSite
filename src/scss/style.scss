@@ -4,29 +4,39 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:300,regular,500,600,700,800,900&display=swap&subset=cyrillic-ext);
 //===========================================================================================================================//
 
+//========================================================VARS===================================================================//
+$mainColor: #fd7e09;
+:root {
+	--vh: 1vh;
+}
+//===========================================================================================================================//
+
 //==========================================================IMPORT=================================================================//
 @import "fonts";
 @import "icons";
 @import "null";
 @import "header";
 @import "footer";
-//===========================================================================================================================//
-
-//========================================================VARS===================================================================//
-$mainColor: #fd7e09;
+@import "about";
+@import "aside";
+@import "chat";
+@import "popup";
+@import "members";
+@import "articles";
+@import "currentNews";
+@import "profile";
+@import "editProfile";
 //===========================================================================================================================//
 
 //==========================================================BODY=================================================================//
 html {
 	&::-webkit-scrollbar {
 		width: 8px;
-		height: 8px;
 	}
 	&::-webkit-scrollbar-track {
 		background-color: #191919;
 	}
 	&::-webkit-scrollbar-thumb {
-		border-radius: 5px;
 		background-color: $mainColor;
 		&:hover {
 			background-color: #ff5100;
@@ -50,7 +60,8 @@ body {
 	}
 }
 .wrapper {
-	background: linear-gradient(90deg, rgba(66, 66, 66, 1) 0%, rgba(15, 15, 15, 1) 100%, rgba(15, 15, 15, 1) 100%) no-repeat;
+	background: linear-gradient(90deg, rgba(66, 66, 66, 1) 0%, rgba(15, 15, 15, 1) 100%, rgba(15, 15, 15, 1) 100%)
+		no-repeat;
 	min-height: 100%;
 	overflow: hidden;
 	display: flex;
@@ -61,6 +72,13 @@ body {
 	position: relative;
 	z-index: 2;
 	flex: 1 1 auto;
+	&__body {
+		display: flex;
+		justify-content: space-between;
+	}
+	section {
+		flex: 1 1 auto;
+	}
 }
 //===========================================================================================================================//
 
@@ -145,29 +163,19 @@ body {
 		font-size: 40px;
 		color: #fff;
 		position: fixed;
-		bottom: 10%;
+		bottom: 7.5%;
 		right: 20px;
 		z-index: 9;
 		opacity: 0;
 		visibility: hidden;
-		@media (max-width:767px){
+		@media (max-width: 767px) {
 			width: 50px;
 			height: 50px;
 			font-size: 30px;
 		}
-		@media (max-width:479px){
+		@media (max-width: 479px) {
 			right: 10px;
 		}
 	}
 }
-//===========================================================================================================================//
-
-//===========================================================IMPORT================================================================//
-@import "about";
-@import "aside";
-@import "chat";
-@import "news";
-@import "currentNews";
-@import "profile";
-@import "popup";
 //===========================================================================================================================//

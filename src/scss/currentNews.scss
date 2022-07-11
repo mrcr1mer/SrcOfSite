@@ -1,9 +1,8 @@
 .current-news {
-	flex: 1 1 auto;
-	@media (max-width:1024px){
+	@media (max-width: 1024px) {
 		padding: 0px 70px;
 	}
-	@media (max-width:767px){
+	@media (max-width: 767px) {
 		padding: 0;
 	}
 	// .current-news__body
@@ -12,23 +11,31 @@
 	}
 	&__info {
 		padding: 25px;
-		@media (max-width:1024px){
+		@media (max-width: 1024px) {
 			padding: 20px;
 		}
-		@media (max-width:767px){
+		@media (max-width: 767px) {
 			padding: 15px;
 		}
-		@media (max-width:479px){
+		@media (max-width: 479px) {
 			padding: 10px;
 		}
 	}
 	// .current-news__image
 	&__image {
-		padding: 0px 0px 60.7% 0px;
-		transition: all 0.4s ease 0s;
-		@media (min-width:1025px){
-			&:hover{
-				box-shadow: 0px 0px 4px #fd7e09 inset;
+		padding: 0px 0px 50% 0px;
+		position: relative;
+		overflow: hidden;
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+			transition: all 0.8s ease 0s;
+			&:hover {
+				transform: scale(1.2);
 			}
 		}
 	}
@@ -39,20 +46,20 @@
 		line-height: 125%;
 		color: $mainColor;
 		margin: 0px 0px 10px 0px;
-		@media (max-width:1550px){
+		@media (max-width: 1550px) {
 			font-size: 30px;
 		}
-		@media (max-width:1024px){
+		@media (max-width: 1024px) {
 			font-size: 28px;
 		}
-		@media (max-width:767px){
+		@media (max-width: 767px) {
 			font-size: 26px;
 		}
-		@media (max-width:640px){
+		@media (max-width: 640px) {
 			margin: 0px 0px 5px 0px;
 			font-size: 24px;
 		}
-		@media (max-width:479px){
+		@media (max-width: 479px) {
 			font-size: 20px;
 		}
 	}
@@ -65,24 +72,24 @@
 		a {
 			color: $mainColor;
 			transition: all 0.4s ease 0s;
-			&:hover{
+			&:hover {
 				color: #ff5100;
 			}
 		}
-		@media (max-width:1550px){
+		@media (max-width: 1550px) {
 			font-size: 24px;
 		}
-		@media (max-width:1024px){
+		@media (max-width: 1024px) {
 			font-size: 22px;
 		}
-		@media (max-width:767px){
+		@media (max-width: 767px) {
 			font-size: 20px;
 		}
-		@media (max-width:640px){
+		@media (max-width: 640px) {
 			margin: 0px 0px 10px 0px;
 			font-size: 18px;
 		}
-		@media (max-width:479px){
+		@media (max-width: 479px) {
 			font-size: 16px;
 		}
 	}
@@ -92,22 +99,22 @@
 		font-size: 24px;
 		line-height: 125%;
 		color: $mainColor;
-		&:hover{
+		&:hover {
 			.current-news__icon,
 			.current-news__file-link {
 				color: #ff5100;
 			}
 		}
-		@media (max-width:1550px){
+		@media (max-width: 1550px) {
 			font-size: 22px;
 		}
-		@media (max-width:1024px){
+		@media (max-width: 1024px) {
 			font-size: 20px;
 		}
-		@media (max-width:767px){
+		@media (max-width: 767px) {
 			font-size: 18px;
 		}
-		@media (max-width:479px){
+		@media (max-width: 479px) {
 			font-size: 16px;
 		}
 	}

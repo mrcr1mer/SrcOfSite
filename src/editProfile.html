@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"О клане"
+})
+
+<body>
+	<div class="wrapper">
+		<div class="bg"><img src="@img/bg.png" alt=""></div>
+		@@include('html/header.html',{})
+		<main class="main">
+			<div class="container">
+				<div class="main__body">
+					<section class="edit-profile">
+						<form action="#" class="edit-profile__form">
+							<div class="edit-profile__items">
+								<div class="edit-profile__avatar">
+									
+								</div>
+								<div class="edit-profile__content">
+									
+								</div>
+							</div>
+							<div class="edit-profile__buttons buttons">
+								<div class="buttons__column">
+									<a href="profile.html" class="buttons__button">Вернуться в профиль</a>
+								</div>
+								<div class="buttons__column">
+									<button type="submit" class="buttons__button">Сохранить изменения</button>
+								</div>
+							</div>
+						</form>
+					</section>
+					@@include('html/aside.html',{})
+				</div>
+			</div>
+		</main>
+		@@include('html/footer.html',{})
+		<a href="chat.html" class="icon-chat _icon-chat"></a>
+	</div>
+	@@include('html/popup.html',{})
+	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+	<script src="js/app.min.js"></script>
+</body>
+
+</html>

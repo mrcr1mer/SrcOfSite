@@ -45,6 +45,7 @@ function popupOpen(currentPopup) {
 		})
 	}
 }
+
 function popupClose(popupActive, doUnlock = true) {
 	if (unlock) {
 		popupActive.classList.remove('open');
@@ -79,7 +80,7 @@ function bodyUnlock() {
 				const el = lockPadding[index];
 				el.style.paddingRight = '0px';
 			}
-		}	
+		}
 		body.style.paddingRight = '0px';
 		body.classList.remove('lock');
 	}, timeout)
@@ -87,7 +88,7 @@ function bodyUnlock() {
 	unlock = false;
 	setTimeout(function () {
 		unlock = true;
-	}, timeout); 
+	}, timeout);
 }
 
 document.addEventListener("keydown", function (e) {

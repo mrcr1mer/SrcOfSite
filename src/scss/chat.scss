@@ -3,7 +3,8 @@
 	&__body {
 		position: relative;
 		padding: 85px 0px 20px;
-		height: 100vh;
+		//height: 100vh;
+		height: calc(var(--vh, 1vh) * 100);
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
@@ -11,7 +12,7 @@
 	&__header {
 		width: 100%;
 		height: 55px;
-		background-color: #353535;
+		background-color: rgba(53, 53, 53, 0.7);
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -20,10 +21,8 @@
 		justify-content: center;
 		align-items: center;
 		transition: all 0.4s ease 0s;
-		@media (min-width: 1024px) {
-			&:hover {
-				background-color: #191919;
-			}
+		&:hover {
+			background-color: #191919;
 		}
 	}
 	&__header-title {
@@ -42,7 +41,7 @@
 		flex: 1 1 auto;
 		overflow-y: auto;
 		padding: 0px 10px 0px 0px;
-		@media (min-width: 768px) {
+		@media (min-width: 1025px) {
 			&::-webkit-scrollbar {
 				width: 6px;
 			}
@@ -92,12 +91,24 @@
 	}
 	// .chat__user-avatar
 	&__user-avatar {
-		width: 90px;
+		flex: 0 0 90px;
 		height: 90px;
-		display: block;
+		position: relative;
+		border-radius: 50%;
+		overflow: hidden;
+		transition: all 0.4s ease 0s;
+		@media (min-width: 1025px) {
+			&:hover {
+				filter: brightness(1.5);
+			}
+		}
 		img {
+			position: absolute;
 			width: 100%;
 			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
 		}
 	}
 	// .chat__user-items
@@ -182,7 +193,7 @@
 			margin: 0px 0px 30px 0px;
 		}
 		&__user-avatar {
-			width: 80px;
+			flex: 0 0 80px;
 			height: 80px;
 		}
 		&__nickname {
@@ -221,7 +232,7 @@
 			}
 		}
 		&__user-avatar {
-			width: 70px;
+			flex: 0 0 70px;
 			height: 70px;
 		}
 		&__user-msg {
@@ -264,7 +275,7 @@
 			}
 		}
 		&__user-avatar {
-			width: 60px;
+			flex: 0 0 60px;
 			height: 60px;
 		}
 		&__user-msg {
@@ -336,7 +347,7 @@
 			font-size: 13px;
 		}
 		&__user-avatar {
-			width: 50px;
+			flex: 0 0 50px;
 			height: 50px;
 		}
 		&__input {
