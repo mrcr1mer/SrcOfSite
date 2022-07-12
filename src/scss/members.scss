@@ -64,6 +64,10 @@
 			width: 130px;
 			height: 130px;
 		}
+		@media (max-width:1024px){
+			width: 120px;
+			height: 120px;
+		}
 		@media (max-width: 767px) {
 			width: 110px;
 			height: 110px;
@@ -85,6 +89,9 @@
 		@media (max-width: 1550px) {
 			font-size: 20px;
 		}
+		@media (max-width:1024px){
+			font-size: 18px;
+		}
 		@media (max-width: 767px) {
 			font-size: 16px;
 		}
@@ -99,6 +106,8 @@
 			@media (min-width: 1025px) {
 				display: block;
 			}
+		}
+		&_post {
 		}
 	}
 	// .members__clan
@@ -143,6 +152,9 @@
 		font-size: 28px;
 		@media (max-width: 1550px) {
 			font-size: 24px;
+		}
+		@media (max-width:1024px){
+			font-size: 22px;
 		}
 		@media (max-width: 767px) {
 			font-size: 20px;
@@ -288,6 +300,9 @@
 				display: none;
 			}
 		}
+		// .clan__data_name
+		&_post {
+		}
 	}
 	// .clan__online
 	&__online {
@@ -310,7 +325,10 @@
 	&__title {
 		font-weight: 600;
 		font-size: 24px;
-		margin: 0px 0px 20px 0px;
+		margin: 0px 0px 15px 0px;
+		@media (max-width:1024px){
+			font-size: 22px;
+		}
 		@media (max-width:767px){
 			font-size: 20px;
 			margin: 0px 0px 10px 0px;
@@ -362,6 +380,10 @@
 				filter: brightness(1.5);
 			}
 		}
+		@media (max-width:1024px){
+			flex: 0 0 65px;
+			height: 65px;
+		}
 		@media (max-width:767px){
 			flex: 0 0 60px;
 			height: 60px;
@@ -387,15 +409,19 @@
 	}
 	// .contacts__info
 	&__info {
-		& > *:not(:last-child){
-			margin: 0px 0px 5px 0px;
-		}
+		font-size: 19px;
+		line-height: 110%;
 		max-width: 150px;
+		@media (max-width:1024px){
+			font-size: 17px;
+		}
 		@media (max-width:767px){
+			font-size: 16px;
 			max-width: 120px;
 		}
 		@media (max-width:479px){
 			max-width: 100px;
+			font-size: 14px;
 		}
 		@media (max-width:360px){
 			& > *:not(:last-child){
@@ -409,33 +435,14 @@
 	}
 	// .contacts__nickname
 	&__nickname {
-		font-size: 21px;
 		font-weight: 700;
-		@media (max-width:767px){
-			font-size: 18px;
-		}
-		@media (max-width:479px){
-			font-size: 16px;
-		}
-		@media (max-width:360px){
-			font-size: 14px;
-		}
 	}
 	// .contacts__name
 	&__name {
 		color: #727272;
-		font-size: 19px;
-		line-height: 110%;
-		@media (max-width:767px){
-			font-size: 16px;
-		}
-		@media (max-width:479px){
-			font-size: 14px;
-		}
 		@media (max-width:360px){
 			font-size: 12px;
-		}
-		
+		}	
 	}
 	// .contacts__socials
 	&__socials {
@@ -459,16 +466,31 @@
 		&:not(:last-child) {
 			margin: 0px 20px 0px 0px;
 			@media (max-width: 1024px) {
+				margin: 0px 15px 0px 0px;
+			}
+			@media (max-width:767px){
 				margin: 0px 10px 0px 0px;
 			}
+			@media (max-width:479px){
+				margin: 0px 5px 0px 0px;
+			}
 		}
-		@media (max-width:767px){
+		@media (max-width:1024px){
 			font-size: 40px;
 			&:nth-child(1) {
 				font-size: 30px;
 			}
 			&:nth-child(3) {
 				font-size: 50px;
+			}
+		}
+		@media (max-width:767px){
+			font-size: 35px;
+			&:nth-child(1) {
+				font-size: 25px;
+			}
+			&:nth-child(3) {
+				font-size: 45px;
 			}
 		}
 		@media (max-width:479px){
@@ -478,9 +500,6 @@
 			}
 			&:nth-child(3) {
 				font-size: 37px;
-			}
-			&:not(:last-child){
-				margin: 0px 5px 0px 0px;
 			}
 		}
 		@media (max-width:360px){

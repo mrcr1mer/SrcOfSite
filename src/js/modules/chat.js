@@ -9,13 +9,22 @@ function scrollChat(scroll) {
 	scroll.scrollTop = scroll.scrollHeight;
 }
 
+let scrollButton = document.querySelector('.chat__scroll');
+scrollButton.addEventListener("click", () => {
+	chatContent.scrollTo({
+		top: chatContent.scrollHeight,
+		behavior: "smooth"
+	})
+});
+
+
+
 // let scrollHeight = Math.max(
 // 	document.body.scrollHeight, document.documentElement.scrollHeight,
 // 	document.body.offsetHeight, document.documentElement.offsetHeight,
 // 	document.body.clientHeight, document.documentElement.clientHeight
 // )
 //  window.scrollTo(0, scrollHeight);
-
 
 // ========================ICON-CHAT===============================
 let iconChat = document.querySelector('.icon-chat');
@@ -42,18 +51,10 @@ if (iconChat) {
 
 
 // ========================100VH===============================
-function vh() {
-	window.addEventListener('resize', function () {
-		set_100vh_var();
-		detect_mobile();
-	});
-	window.addEventListener('orientationchange', function () {
-		set_100vh_var();
-	});
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-	setTimeout(set_100vh_var, 50);
-}
-
-function set_100vh_var() {
-	document.documentElement.style.setProperty('--vh', `${window.innerHeight / 100}px`);
-};
+window.addEventListener('resize', () => {
+	let vh = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
+ });

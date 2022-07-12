@@ -99,6 +99,7 @@ if (popupTitles.length > 0) {
 
 // ========================PLACEHOLDER===============================
 const inputs = document.getElementsByTagName('input');
+const textareas = document.getElementsByTagName('textarea');
 if (inputs.length > 0) {
 	for (let index = 0; index < inputs.length; index++) {
 		const input = inputs[index];
@@ -108,6 +109,18 @@ if (inputs.length > 0) {
 		})
 		input.addEventListener("blur", function (e) {
 			input.placeholder = inputPlaceholder;
+		})
+	}
+}
+if (textareas.length > 0) {
+	for (let index = 0; index < textareas.length; index++) {
+		const textarea = textareas[index];
+		const textareaPlaceholder = textarea.placeholder;
+		textarea.addEventListener("focus", function (e) {
+			textarea.placeholder = "";
+		})
+		textarea.addEventListener("blur", function (e) {
+			textarea.placeholder = textareaPlaceholder;
 		})
 	}
 }

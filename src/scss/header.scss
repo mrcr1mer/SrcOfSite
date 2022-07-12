@@ -296,6 +296,7 @@
 				background-color: $mainColor;
 			}
 			&.active {
+				transition: all 0s ease 0s;
 				background-color: $mainColor;
 			}
 		}

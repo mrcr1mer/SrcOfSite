@@ -6,21 +6,24 @@
 
 //========================================================VARS===================================================================//
 $mainColor: #fd7e09;
+
 :root {
 	--vh: 1vh;
 }
 //===========================================================================================================================//
 
 //==========================================================IMPORT=================================================================//
+// ============COMPONENTS==================
 @import "fonts";
 @import "icons";
 @import "null";
 @import "header";
 @import "footer";
-@import "about";
 @import "aside";
-@import "chat";
 @import "popup";
+// ============PAGES==================
+@import "about";
+@import "chat";
 @import "members";
 @import "articles";
 @import "currentNews";
@@ -74,40 +77,10 @@ body {
 	flex: 1 1 auto;
 	&__body {
 		display: flex;
-		justify-content: space-between;
 	}
 	section {
 		flex: 1 1 auto;
 	}
-}
-//===========================================================================================================================//
-
-//===========================================================BACKGROUND================================================================//
-.ibg {
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	img {
-		display: none;
-	}
-}
-.bg {
-	filter: brightness(0.15);
-	position: absolute;
-	top: 230px;
-	right: -150px;
-	@media (max-width: 1024px) {
-		opacity: 0;
-		visibility: hidden;
-	}
-}
-.bg-chat {
-	filter: brightness(0.5);
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
 }
 //===========================================================================================================================//
 
@@ -123,12 +96,11 @@ body {
 		padding: 0px 10px;
 	}
 }
-.container-chat {
-	max-width: 1180px;
-	margin: 0 auto;
-	padding: 0px 15px;
-	@media (max-width: 1550px) {
-		max-width: 1050px;
+input,
+textarea {
+	transition: all 0.2s ease 0s;
+	&:focus {
+		box-shadow: 0px 0px 6px #d9d9d9;
 	}
 }
 .btn {
@@ -177,5 +149,34 @@ body {
 			right: 10px;
 		}
 	}
+}
+//===========================================================================================================================//
+
+//===========================================================BACKGROUND================================================================//
+.ibg {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	img {
+		display: none;
+	}
+}
+.bg {
+	filter: brightness(0.15);
+	position: absolute;
+	top: 230px;
+	right: -150px;
+	@media (max-width: 1024px) {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+.bg-chat {
+	filter: brightness(0.5);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
 }
 //===========================================================================================================================//
