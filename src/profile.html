@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 @@include('html/head.html',{
-"title":"О клане"
+"title":"Профиль"
 })
 
 <body>
@@ -36,7 +36,7 @@
 									</div>
 								</div>
 								<div class="profile__socials">
-									<a href="" class="profile__social _icon-tel"></a>
+									<a href="tel:+77478354711" class="profile__social _icon-tel"></a>
 									<a href="" class="profile__social _icon-tg"></a>
 									<a href="" class="profile__social _icon-vk"></a>
 									<a href="" class="profile__social _icon-insta"></a>
@@ -46,7 +46,7 @@
 						<div class="profile__tables tables">
 							<div class="tables__table tables__table_tournaments">
 								<h3 class="tables__title">Участие в турнирах</h3>
-								<div class="tables__body">
+								<ul class="tables__body">
 									<div class="tables__item">
 										<div class="tables__type">КБ</div>
 										<a href="" class="tables__name">Название турнира</a>
@@ -75,72 +75,48 @@
 										<div class="tables__type">П</div>
 										<a href="" class="tables__name">Название турнира</a>
 									</div>
-								</div>
+								</ul>
 							</div>
 							<div class="tables__table tables__table_team">
 								<h3 class="tables__title">Ваша команда (Название)</h3>
-								<div class="tables__body">
+								<ol class="tables__body">
 									<div class="tables__item">
-										<div class="tables__type">1</div>
+										<li class="tables__type"></li>
 										<a href="" class="tables__name">CrispySmasher<span>Л</span></a>
 									</div>
 									<div class="tables__item">
-										<div class="tables__type">2</div>
+										<li class="tables__type"></li>
 										<a href="" class="tables__name">CrispySmasher</a>
 									</div>
 									<div class="tables__item">
-										<div class="tables__type">3</div>
+										<li class="tables__type"></li>
 										<a href="" class="tables__name">CrispySmasher</a>
 									</div>
 									<div class="tables__item">
-										<div class="tables__type">4</div>
+										<li class="tables__type"></li>
 										<a href="" class="tables__name">CrispySmasher</a>
 									</div>
 									<div class="tables__item">
-										<div class="tables__type">5</div>
+										<li class="tables__type"></li>
 										<a href="" class="tables__name">CrispySmasher</a>
 									</div>
 									<div class="tables__item">
-										<div class="tables__type">6</div>
+										<li class="tables__type"></li>
 										<a href="" class="tables__name">CrispySmasher</a>
 									</div>
 									<div class="tables__item">
-										<div class="tables__type">7</div>
+										<li class="tables__type"></li>
 										<a href="" class="tables__name">CrispySmasher</a>
 									</div>
 									<div class="tables__item">
-										<div class="tables__type">10</div>
+										<li class="tables__type"></li>
 										<a href="" class="tables__name">CrispySmasher</a>
 									</div>
-								</div>
+								</ol>
 							</div>
 							<div class="tables__table tables__table_invite">
 								<h3 class="tables__title">Приглашения в команду</h3>
-								<div class="tables__body">
-									<div class="tables__item">
-										<div class="tables__name">
-											Dangeon Masters
-											<div class="tables__btns">
-												<form action="#" class="tables__form">
-													<input type="hidden">
-													<button type="submit" class="tables__btn _icon-check"></button>
-												</form>
-												<button type="button" class="tables__btn tables__btn_close"></button>
-											</div>
-										</div>
-									</div>
-									<div class="tables__item">
-										<div class="tables__name">
-											Dangeon Masters 
-											<div class="tables__btns">
-												<form action="#" class="tables__form">
-													<input type="hidden">
-													<button type="submit" class="tables__btn _icon-check"></button>
-												</form>
-												<button type="button" class="tables__btn tables__btn_close"></button>
-											</div>
-										</div>
-									</div>
+								<ul class="tables__body">
 									<div class="tables__item">
 										<div class="tables__name">
 											Dangeon Masters
@@ -201,19 +177,43 @@
 											</div>
 										</div>
 									</div>
-								</div>
+									<div class="tables__item">
+										<div class="tables__name">
+											Dangeon Masters
+											<div class="tables__btns">
+												<form action="#" class="tables__form">
+													<input type="hidden">
+													<button type="submit" class="tables__btn _icon-check"></button>
+												</form>
+												<button type="button" class="tables__btn tables__btn_close"></button>
+											</div>
+										</div>
+									</div>
+									<div class="tables__item">
+										<div class="tables__name">
+											Dangeon Masters
+											<div class="tables__btns">
+												<form action="#" class="tables__form">
+													<input type="hidden">
+													<button type="submit" class="tables__btn _icon-check"></button>
+												</form>
+												<button type="button" class="tables__btn tables__btn_close"></button>
+											</div>
+										</div>
+									</div>
+								</ul>
 							</div>
 						</div>
 						<div class="profile__buttons buttons">
 							<div class="buttons__column">
 								<a href="editProfile.html" class="buttons__button">Редактировать профиль</a>
-								<a href="#confirmExitPopup" class="buttons__button popup-link">Выйти</a>
-								<a href="" class="buttons__button">Войти в админку</a>							
+								<a href="#confirmExitProfilePopup" class="buttons__button popup-link">Выйти</a>
+								<a href="" class="buttons__button">Войти в админку</a>
 							</div>
-							<div class="buttons__column">						
-								<a href="" class="buttons__button">Создать команду</a>
-								<a href="" class="buttons__button">Редактировать команду</a>
-								<a href="" class="buttons__button">Покинуть команду</a>
+							<div class="buttons__column">
+								<a href="createTeam.html" class="buttons__button">Создать команду</a>
+								<a href="editTeam.html" class="buttons__button">Редактировать команду</a>
+								<a href="#confirmExitTeamPopup" class="buttons__button  popup-link">Покинуть команду</a>
 							</div>
 						</div>
 					</section>

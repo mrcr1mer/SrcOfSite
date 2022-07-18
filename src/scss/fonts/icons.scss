@@ -1,0 +1,81 @@
+@font-face {
+	font-family: "icons";
+	font-display: swap;
+	src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+%ic {
+	font-family: "icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="_icon-"],
+[class*=" _icon-"] {
+	&::before {
+		@extend %ic;
+		display: block;
+	}
+}
+
+// иконка изображения
+._icon-photo:before {
+	content: "\e908";
+ }
+ // иконка кубка
+ ._icon-win:before {
+	content: "\e90c";
+ }
+ // иконка галочки
+ ._icon-check:before {
+	content: "\e909";
+ }
+ // иконка мусорки
+ ._icon-del:before {
+	content: "\e90a";
+ }
+ // иконка поиска
+ ._icon-search:before {
+	content: "\e90b";
+ }
+ // иконка файла
+ ._icon-file:before {
+	content: "\e906";
+ }
+ // иконка телефона
+ ._icon-tel:before {
+	content: "\e907";
+ }
+ // иконка чата
+ ._icon-chat:before {
+	content: "\e900";
+ }
+ // иконка инсты
+ ._icon-insta:before {
+	content: "\e901";
+ }
+ // иконка левой стрелки
+ ._icon-left-arrow:before {
+	content: "\e902";
+ }
+  // иконка правой стрелки
+ ._icon-right-arrow:before {
+	content: "\e903";
+ }
+  // иконка телеграмма
+ ._icon-tg:before {
+	content: "\e904";
+ }
+  // иконка вк
+ ._icon-vk:before {
+	content: "\e905";
+ }
+ 

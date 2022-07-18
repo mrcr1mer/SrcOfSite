@@ -1,34 +1,17 @@
-//=========================================================FONTS==================================================================//
-// &display=swap&subset=cyrillic-ext
+//=========================================================GOOGLE-FONTS==================================================================//
+//&display=swap&subset=cyrillic-ext
 @import url(https://fonts.googleapis.com/css?family=Bebas+Neue:regular&display=swap&subset=cyrillic-ext);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:300,regular,500,600,700,800,900&display=swap&subset=cyrillic-ext);
 //===========================================================================================================================//
 
 //========================================================VARS===================================================================//
+//===========SCSS-VARS==========
 $mainColor: #fd7e09;
 
+//===========CSS-VARS==========
 :root {
 	--vh: 1vh;
 }
-//===========================================================================================================================//
-
-//==========================================================IMPORT=================================================================//
-// ============COMPONENTS==================
-@import "fonts";
-@import "icons";
-@import "null";
-@import "header";
-@import "footer";
-@import "aside";
-@import "popup";
-// ============PAGES==================
-@import "about";
-@import "chat";
-@import "members";
-@import "articles";
-@import "currentNews";
-@import "profile";
-@import "editProfile";
 //===========================================================================================================================//
 
 //==========================================================BODY=================================================================//
@@ -63,120 +46,62 @@ body {
 	}
 }
 .wrapper {
-	background: linear-gradient(90deg, rgba(66, 66, 66, 1) 0%, rgba(15, 15, 15, 1) 100%, rgba(15, 15, 15, 1) 100%)
-		no-repeat;
+	background: linear-gradient(90deg, rgba(66, 66, 66, 1) 0%, rgba(15, 15, 15, 1) 100%, rgba(15, 15, 15, 1) 100%) no-repeat;
 	min-height: 100%;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	position: relative;
-}
-.main {
-	position: relative;
-	z-index: 2;
-	flex: 1 1 auto;
-	&__body {
-		display: flex;
-	}
-	section {
-		flex: 1 1 auto;
+	> * {
+		min-width: 0;
 	}
 }
 //===========================================================================================================================//
 
-//===========================================================CLASSES================================================================//
+//===========================================================CONTAINER================================================================//
 .container {
-	max-width: 1180px;
+	max-width: 1140px;
+	box-sizing: content-box;
 	margin: 0 auto;
 	padding: 0px 20px;
 	@media (max-width: 1550px) {
-		max-width: 1050px;
+		max-width: 1010px;
 	}
 	@media (max-width: 479px) {
 		padding: 0px 10px;
 	}
 }
-input,
-textarea {
-	transition: all 0.2s ease 0s;
-	&:focus {
-		box-shadow: 0px 0px 6px #d9d9d9;
-	}
-}
-.btn {
-	font-weight: 800;
-	width: 100%;
-	background-color: $mainColor;
-	color: #fff;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	transition: all 0.4s ease 0s;
-	@media (min-width: 1025px) {
-		&:hover {
-			background-color: #ff5100;
-		}
-		&:active {
-			background-color: #703a07;
-		}
-	}
-}
-.icon-chat {
-	display: none;
-	@media (max-width: 1024px) {
-		display: block;
-		width: 60px;
-		height: 60px;
-		border-radius: 50%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background-color: $mainColor;
-		font-size: 40px;
-		color: #fff;
-		position: fixed;
-		bottom: 7.5%;
-		right: 20px;
-		z-index: 9;
-		opacity: 0;
-		visibility: hidden;
-		@media (max-width: 767px) {
-			width: 50px;
-			height: 50px;
-			font-size: 30px;
-		}
-		@media (max-width: 479px) {
-			right: 10px;
-		}
-	}
-}
 //===========================================================================================================================//
 
-//===========================================================BACKGROUND================================================================//
-.ibg {
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	img {
-		display: none;
-	}
-}
-.bg {
-	filter: brightness(0.15);
-	position: absolute;
-	top: 230px;
-	right: -150px;
-	@media (max-width: 1024px) {
-		opacity: 0;
-		visibility: hidden;
-	}
-}
-.bg-chat {
-	filter: brightness(0.5);
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-}
+//==========================================================IMPORT=================================================================//
+// ============NULL-STYLE==================
+@import "base/null";
+
+// ============FONTS==================
+@import "fonts/fonts";
+
+// ============ICONS-FONT==================
+@import "fonts/icons";
+
+// ============BASE-STYLES==================
+@import "base/base";
+
+// ============COMPONENTS==================
+@import "components/header";
+@import "components/footer";
+@import "components/aside";
+@import "components/popup";
+@import "components/pagging";
+
+// ============PAGES==================
+@import "pages/home";
+@import "pages/chat";
+@import "pages/members";
+@import "pages/clan";
+@import "pages/articles";
+@import "pages/currentNews";
+@import "pages/profile";
+@import "pages/editProfile";
+@import "pages/team";
+
 //===========================================================================================================================//

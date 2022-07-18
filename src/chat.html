@@ -11,12 +11,11 @@
 			<section class="chat">
 				<div class="container">
 					<div class="chat__body">
-						<button type="button" class="chat__header" onclick="history.back()">
+						<button type="button" class="chat__header">
 							<div class="chat__header-title">Вернуться обратно</div>
 							<div class="chat__header-icon"><img src="@img/icons/back.svg" alt=""></div>
 						</button>
-						<div class="chat__content">
-							
+						<div class="chat__content">						
 							<div class="chat__user send">
 								<div class="chat__user-data">
 									<a href="" class="chat__user-avatar">
@@ -35,15 +34,6 @@
 								</div>
 							</div>
 							<div class="chat__user chat__user_me send">
-								<div class="chat__user-data">
-									<a href="" class="chat__user-avatar">
-										<img src="@img/members/04.jpg" alt="">
-									</a>
-									<div class="chat__user-items">
-										<div class="chat__user-item chat__user-item_nickname">Ник</div>
-										<div class="chat__user-item chat__user-item_post">Должность</div>
-									</div>
-								</div>
 								<div class="chat__user-msg">
 									<div class="chat__msg">
 										Текст сообщений сообщений
@@ -52,18 +42,9 @@
 								</div>
 							</div>
 							<div class="chat__user chat__user_me send">
-								<div class="chat__user-data">
-									<a href="" class="chat__user-avatar">
-										<img src="@img/members/04.jpg" alt="">
-									</a>
-									<div class="chat__user-items">
-										<div class="chat__user-item chat__user-item_nickname">Ник</div>
-										<div class="chat__user-item chat__user-item_post">Должность</div>
-									</div>
-								</div>
 								<div class="chat__user-msg">
 									<div class="chat__msg">
-										Текст сообщений сообщений сообщений сообщений сообщений сообщений Текст сообщений сообщений сообщений сообщений сообщений сообщений
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum dolores dolorem labore consequuntur assumenda porro incidunt animi nesciunt eligendi iusto, amet mollitia reiciendis hic quidem quia ipsa earum, esse delectus!
 									</div>
 									<time class="chat__time">14:43</time>
 								</div>
@@ -103,15 +84,6 @@
 								</div>
 							</div>
 							<div class="chat__user chat__user_me send">
-								<div class="chat__user-data">
-									<a href="" class="chat__user-avatar">
-										<img src="@img/members/04.jpg" alt="">
-									</a>
-									<div class="chat__user-items">
-										<div class="chat__user-item chat__user-item_nickname">Ник</div>
-										<div class="chat__user-item chat__user-item_post">Должность</div>
-									</div>
-								</div>
 								<div class="chat__user-msg">
 									<div class="chat__msg">
 										Текст сообщений сообщений сообщений сообщений сообщений сообщений
@@ -120,15 +92,6 @@
 								</div>
 							</div>
 							<div class="chat__user chat__user_me send">
-								<div class="chat__user-data">
-									<a href="" class="chat__user-avatar">
-										<img src="@img/members/04.jpg" alt="">
-									</a>
-									<div class="chat__user-items">
-										<div class="chat__user-item chat__user-item_nickname">Ник</div>
-										<div class="chat__user-item chat__user-item_post">Должность</div>
-									</div>
-								</div>
 								<div class="chat__user-msg">
 									<div class="chat__msg">
 										Текст сообщений сообщений сообщений сообщений сообщений сообщений
@@ -148,19 +111,44 @@
 								</div>
 								<div class="chat__user-msg">
 									<div class="chat__msg">
-										Текст сообщений сообщений сообщений сообщений сообщений сообщений
+										Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit recusandae repudiandae at odit ut iste! Rerum nostrum, facere maiores sit unde alias optio quidem dicta dignissimos beatae consectetur blanditiis minus.
+									</div>
+									<time class="chat__time">14:43</time>
+								</div>
+							</div>
+							<div class="chat__user send">
+								<div class="chat__user-data">
+									<a href="" class="chat__user-avatar">
+										<img src="@img/members/06.jpg" alt="">
+									</a>
+									<div class="chat__user-items">
+										<div class="chat__user-item chat__user-item_nickname">Ник</div>
+										<div class="chat__user-item chat__user-item_post">Должность</div>
+									</div>
+								</div>
+								<div class="chat__user-msg">
+									<div class="chat__msg">
+										Сегодня играем турик всем быть вовремя))))
+									</div>
+									<time class="chat__time">14:43</time>
+								</div>
+							</div>
+							<div class="chat__user chat__user_me send">
+								<div class="chat__user-msg">
+									<div class="chat__msg">
+										Сегодня играем турик всем быть вовремя))))
 									</div>
 									<time class="chat__time">14:43</time>
 								</div>
 							</div>
 						</div>
 						<form action="#" class="chat__form">
-							<input name="chat" type="text" class="chat__input" placeholder="Сообщение...">
+							<input autocomplete="off" name="chat" type="text" class="chat__input" placeholder="Сообщение...">
 							<button type="submit" class="chat__btn"><img src="@img/icons/send.svg" alt=""></button>
+							<button type="button" class="chat__scroll-button">
+								<span></span>
+							</button>
 						</form>
-						<div class="chat__scroll">
-							<span></span>
-						</div>
 					</div>
 				</div>
 			</section>			

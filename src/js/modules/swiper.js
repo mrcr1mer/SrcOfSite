@@ -32,6 +32,7 @@ new Swiper('.about-swiper', {
 			slidesPerView: 1.8,
 			spaceBetween: 25,
 			centeredSlides: true,
+			watchSlidesProgress: true,
 		},
 		1025: {
 			slidesPerView: 1,
@@ -39,19 +40,11 @@ new Swiper('.about-swiper', {
 			centeredSlides: false,
 		},
 	},
-	//slideToClickedSlide: true,
-	//autoHeight: true,
-	//freeMode: true,
-	// effect: 'fade',
-	// fadeEffect: {
-	// 	crossFade: true,
-	// },
-	// LAZY-LOADING
-	// preloadImages: false,
-	// lazy: {
-	// 	loadOnTransitionStart: false,
-	// 	loadPrevNext: false,
-	// },
-	// watchSlidesProgress: true,
-	// watchSlidesVisibility: true,
+	preloadImages: false,
+	lazy: {
+		loadOnTransitionStart: true,
+		loadPrevNext: true,
+	},
 });
+
+

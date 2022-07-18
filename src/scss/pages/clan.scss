@@ -1,0 +1,217 @@
+.clan {
+	margin: 0px 0px 40px 0px;
+	@media (max-width: 1024px) {
+		margin: 0px 0px 25px 0px;
+	}
+	@media (max-width: 767px) {
+		margin: 0px 0px 15px 0px;
+	}
+	// .clan__header
+	&__header {
+		background-color: #121212;
+		min-height: 70px;
+		padding: 0px 20px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-weight: 600;
+		@media (max-width: 1024px) {
+			min-height: 60px;
+			padding: 0px 15px;
+		}
+		@media (max-width: 479px) {
+			min-height: 50px;
+			padding: 0px 10px;
+		}
+	}
+	// .clan__title
+	&__title {
+		color: $mainColor;
+		font-size: 28px;
+		@media (max-width: 1550px) {
+			font-size: 24px;
+		}
+		@media (max-width: 1024px) {
+			font-size: 22px;
+		}
+		@media (max-width: 767px) {
+			font-size: 20px;
+		}
+		@media (max-width: 479px) {
+			font-size: 16px;
+		}
+	}
+	// .clan__total-online
+	&__total-online {
+		color: $mainColor;
+		font-size: 20px;
+		@media (max-width: 1550px) {
+			font-size: 18px;
+		}
+		@media (max-width: 767px) {
+			font-size: 16px;
+		}
+		@media (max-width: 479px) {
+			font-size: 14px;
+		}
+	}
+	ol.clan__body {
+		list-style: none;
+		counter-reset: item;
+		li {
+			position: relative;
+			&::before {
+				content: counter(item) " ";
+				counter-increment: item;
+				position: absolute;
+				left: 20px;
+				@media (max-width: 1024px) {
+					left: 15px;
+				}
+				@media (max-width: 479px) {
+					left: 10px;
+				}
+			}
+		}
+	}
+	// .clan__body
+	&__body {
+		max-height: 300px;
+		overflow-y: auto;
+		overflow-x: hidden;
+		@media (max-width: 1024px) {
+			max-height: 250px;
+		}
+		@media (max-width: 479px) {
+			max-height: 200px;
+		}
+		&::-webkit-scrollbar {
+			width: 4px;
+		}
+		&::-webkit-scrollbar-track {
+			background-color: transparent;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: $mainColor;
+			&:hover {
+				background-color: #ff5100;
+			}
+			&:active {
+				background-color: #8b2f12;
+			}
+		}
+		scrollbar-color: $mainColor transparent;
+		scrollbar-width: thin;
+	}
+	// .clan__item
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-weight: 600;
+		background: rgba(20, 20, 20, 0.65);
+		min-height: 60px;
+		padding: 10px 20px 10px 60px;
+		font-size: 20px;
+		&:not(:last-child) {
+			border-bottom: 1px solid #121212;
+		}
+		@media (max-width: 1550px) {
+			font-size: 18px;
+		}
+		@media (max-width: 1024px) {
+			padding: 10px 15px 10px 50px;
+			min-height: 50px;
+		}
+		@media (max-width: 767px) {
+			font-size: 16px;
+		}
+		@media (max-width: 479px) {
+			min-height: 40px;
+			padding: 10px 10px 10px 30px;
+			font-size: 14px;
+		}
+		@media (max-width: 320px) {
+			font-size: 12px;
+		}
+	}
+	// .clan__info
+	&__info {
+		display: flex;
+		align-items: center;
+	}
+	// .clan__data
+	&__data {
+		font-weight: 500;
+		line-height: 120%;
+		flex: 0 0 160px;
+		@media (max-width: 767px) {
+			flex: 0 0 140px;
+		}
+		@media (max-width: 479px) {
+			flex: 0 0 120px;
+		}
+		@media (max-width: 320px) {
+			flex: 0 0 100px;
+		}
+		&:not(:last-child) {
+			margin: 0px 40px 0px 0px;
+			@media (max-width: 1550px) {
+				margin: 0px 20px 0px 0px;
+			}
+			@media (max-width: 479px) {
+				margin: 0px 10px 0px 0px;
+			}
+		}
+		// .clan__data_nickname
+		&_nickname {
+			font-weight: 700;
+			color: #fff;
+			transition: all 0.4s ease 0s;
+			@media (min-width: 1025px) {
+				&:hover {
+					color: $mainColor;
+				}
+			}
+		}
+		// .clan__data_name
+		&_name {
+			@media (max-width: 640px) {
+				display: none;
+			}
+		}
+		// .clan__data_name
+		&_post {
+		}
+	}
+	// .clan__online
+	&__online {
+		font-weight: 500;
+		// .clan__online_on
+		&_on {
+			color: rgba(5, 255, 0, 0.67);
+		}
+		// .clan__online_off
+		&_off {
+			color: #d9d9d9;
+		}
+	}
+}
+
+.clan {
+	// .clan__label-checkbox
+	&__label-checkbox {
+		font-weight: 600;
+		font-size: 22px;
+		cursor: pointer;
+		flex: 1 1 auto;
+		transition: all 0.4s ease 0s;
+	}
+	// .clan__checkbox
+	&__checkbox {
+		display: none;
+		&:checked + .clan__label-checkbox{
+			background-color: $mainColor;
+		}
+	}
+}

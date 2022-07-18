@@ -1,22 +1,123 @@
+// ========================ICON-CHAT===============================
+let iconChat = document.querySelector('.icon-chat');
+let timeOut;
+if (iconChat) {
+	document.addEventListener('scroll', function () {
+		iconChat.style.opacity = 1;
+		iconChat.style.visibility = "visible";
+		iconChat.style.transform = 'translate(' + 0 + ',' + 0 + ')';
+		if (timeOut != undefined) clearTimeout(timeOut);
+		timeOut = setTimeout(() => {
+			iconChat.style.opacity = 0;
+			iconChat.style.visibility = "hidden";
+			iconChat.style.transform = 'translate(' + 0 + ',' + 100 + '%' + ')';
+		}, 2500)
+	});
+}
+
+
+
 // ========================SCROLL-CHAT===============================
-let chatContent = document.querySelector(".chat__content");
-let chatAsideContent = document.querySelector('.chat-aside__content');
+const chatContent = document.querySelector(".chat__content");
+const chatAsideContent = document.querySelector('.chat-aside__content');
 
 if (chatContent) scrollChat(chatContent);
 if (chatAsideContent) scrollChat(chatAsideContent);
 
 function scrollChat(scroll) {
-	scroll.scrollTop = scroll.scrollHeight;
+	scroll.scrollTo(0, scroll.scrollHeight);
 }
 
-let scrollButton = document.querySelector('.chat__scroll');
-scrollButton.addEventListener("click", () => {
-	chatContent.scrollTo({
-		top: chatContent.scrollHeight,
-		behavior: "smooth"
-	})
-});
 
+// Основной чат
+const scrollButton = document.querySelector('.chat__scroll-button');
+if (scrollButton) {
+	scrollDown(scrollButton, chatContent);
+}
+/*
+if (scrollButton) {
+	const scrollChatContent = chatContent.scrollTop - 100;
+	chatContent.addEventListener("scroll", () => {
+		const currentScrollChatContent = chatContent.scrollTop;
+		if (currentScrollChatContent <= scrollChatContent) {
+			scrollButton.style.opacity = 1;
+			scrollButton.style.visibility = "visible";
+			scrollButton.style.transform = 'translate(' + 0 + ',' + 0 + ')';
+		} else {
+			scrollButton.style.opacity = 0;
+			scrollButton.style.visibility = "hidden";
+			scrollButton.style.transform = 'translate(' + 0 + ',' + 120 + '%' + ')';
+		}
+	})
+	scrollButton.addEventListener("click", () => {
+		chatContent.scrollTo({
+			top: chatContent.scrollHeight,
+			behavior: "smooth"
+		})
+	});
+}
+*/
+
+// Чат сайдбара
+const scrollButtonAside = document.querySelector('.chat-aside__scroll-button');
+if (scrollButtonAside) {
+	scrollDown(scrollButtonAside, chatAsideContent);
+}
+/*
+if (scrollButtonAside) {
+	const scrollChatAsideContent = chatAsideContent.scrollTop - 700;
+	//console.log(scrollChatAsideContent + 'скролл');
+	chatAsideContent.addEventListener("scroll", () => {
+		const currentScrollChatAsideContent = chatAsideContent.scrollTop;
+		//console.log(currentScrollChatAsideContent);
+		if (currentScrollChatAsideContent <= scrollChatAsideContent) {
+			scrollButtonAside.style.opacity = 1;
+			scrollButtonAside.style.visibility = "visible";
+			scrollButtonAside.style.transform = 'translate(' + 0 + ',' + 0 + ')';
+		} else {
+			scrollButtonAside.style.opacity = 0;
+			scrollButtonAside.style.visibility = "hidden";
+			scrollButtonAside.style.transform = 'translate(' + 0 + ',' + 120 + '%' + ')';
+		}
+	})
+	scrollButtonAside.addEventListener("click", () => {
+		chatAsideContent.scrollTo({
+			top: chatAsideContent.scrollHeight,
+			behavior: "smooth"
+		})
+	});
+}
+*/
+function scrollDown(scrollButton, chatContent) {
+	const scrollContent = chatContent.scrollTop - 100;
+	chatContent.addEventListener("scroll", () => {
+		const currentScrollContent = chatContent.scrollTop;
+		if (currentScrollContent <= scrollContent) {
+			scrollButton.style.opacity = 1;
+			scrollButton.style.visibility = "visible";
+			scrollButton.style.transform = 'translate(' + 0 + ',' + 0 + ')';
+		} else {
+			scrollButton.style.opacity = 0;
+			scrollButton.style.visibility = "hidden";
+			scrollButton.style.transform = 'translate(' + 0 + ',' + 150 + '%' + ')';
+		}
+	})
+	scrollButton.addEventListener("click", () => {
+		chatContent.scrollTo({
+			top: chatContent.scrollHeight,
+			behavior: "smooth"
+		})
+	})
+}
+
+
+// ========================BACK===============================
+const goBack = document.querySelector('.chat__header');
+if (goBack) {
+	goBack.addEventListener("click", () => {
+		history.back()
+	})
+}
 
 
 // let scrollHeight = Math.max(
@@ -25,36 +126,3 @@ scrollButton.addEventListener("click", () => {
 // 	document.body.clientHeight, document.documentElement.clientHeight
 // )
 //  window.scrollTo(0, scrollHeight);
-
-// ========================ICON-CHAT===============================
-let iconChat = document.querySelector('.icon-chat');
-let timeOut;
-if (iconChat) {
-	document.addEventListener('scroll', function () {
-		iconChat.style.opacity = 1;
-		iconChat.style.visibility = "visible";
-		if (timeOut != undefined) clearTimeout(timeOut)
-		timeOut = setTimeout(() => {
-			iconChat.style.opacity = 0;
-			iconChat.style.visibility = "hidden";
-		}, 2500)
-	});
-
-}
-
-
-// ========================BACK===============================
-// const goBack = document.querySelector('.chat__header');
-// goBack.addEventListener("click", () => {
-
-// })
-
-
-// ========================100VH===============================
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-window.addEventListener('resize', () => {
-	let vh = window.innerHeight * 0.01;
-	document.documentElement.style.setProperty('--vh', `${vh}px`);
- });

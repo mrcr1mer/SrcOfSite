@@ -12,7 +12,55 @@
 			<div class="container">
 				<div class="main__body">
 					<section class="about">
-						@@include('html/swiper.html',{})	
+						<div class="about-swiper swiper">
+							<div class="about-swiper__wrapper swiper-wrapper">
+								<div class="about-swiper__slide swiper-slide">
+									<div class="about-swiper__image">
+										<img data-src="@img/about/01.jpg" class="swiper-lazy" alt="">
+										<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+									</div>		
+								</div>
+								<div class="about-swiper__slide swiper-slide">
+									<div class="about-swiper__image">
+										<img data-src="@img/about/02.jpg" class="swiper-lazy" alt="">
+										<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+									</div>
+								</div>
+								<div class="about-swiper__slide swiper-slide">
+									<div class="about-swiper__image">
+										<img data-src="@img/about/03.jpg" class="swiper-lazy" alt="">
+										<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+									</div>
+								</div>
+								<div data-swiper-autoplay="5000" class="about-swiper__slide swiper-slide">
+									<div class="about-swiper__image">
+										<video autoplay preload="auto" muted controls poster="@img/video/preview-video.jpg" class="about-swiper__item">
+											<source src="@img/video/preview.webm" type="video/webm">
+											<source src="@img/video/preview.mp4" type="video/mp4">
+										</video>
+									</div>
+								</div>
+								<div class="about-swiper__slide swiper-slide">
+									<div class="about-swiper__image">
+										<img data-src="@img/about/04.jpg" class="swiper-lazy" alt="">
+										<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+									</div>
+								</div>
+								<div class="about-swiper__slide swiper-slide">
+									<div class="about-swiper__image">
+										<img data-src="@img/about/05.jpg" class="swiper-lazy" alt="">
+										<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+									</div>
+								</div>
+								<div class="about-swiper__slide swiper-slide">
+									<div class="about-swiper__image">
+										<img data-src="@img/about/06.jpg" class="swiper-lazy" alt="">
+										<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
 						<div class="about__content">
 							<h1 class="about__title">Немного о нас</h1>
 							<div class="about__info">

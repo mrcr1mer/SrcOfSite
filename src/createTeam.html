@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"Создать команду"
+})
+
+<body>
+	<div class="wrapper">
+		<div class="bg"><img src="@img/bg.png" alt=""></div>
+		@@include('html/header.html',{})
+		<main class="main">
+			<div class="container">
+				<div class="main__body">
+					<section class="create-team">
+						<form action="#" class="create-team__form">
+							<div class="create-team__body">
+								<div class="create-team__clan clan">
+									<div class="clan__header">
+										<div class="clan__searh">
+											<label class="clan__label-search" for="searchPlayers">Поиск по имени</label>
+											<input type="text" id="searchPlayers" name="search" class="clan__input-searh">
+										</div>
+										<div class="clan__icon _icon-search"></div>
+									</div>
+									<ul class="clan__body">
+										<li class="clan__item">
+											<input type="checkbox" id="clanChexbox" class="clan__checkbox" name="clanPlayers" value="player">
+											<label class="clan__label-checkbox" for="clanChexbox">CrispySmasher</label>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="create-team__buttons buttons">
+								<div class="buttons__column">
+									<a href="profile.html" class="buttons__button">Вернуться в профиль</a>
+								</div>
+								<div class="buttons__column">
+									<button type="submit" class="buttons__button">Создать команду</button>
+								</div>
+							</div>
+						</form>
+					</section>
+					@@include('html/aside.html',{})
+				</div>
+			</div>
+		</main>
+		@@include('html/footer.html',{})
+		<a href="chat.html" class="icon-chat _icon-chat"></a>
+	</div>
+	@@include('html/popup.html',{})
+	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+	<script src="js/app.min.js"></script>
+</body>
+
+</html>

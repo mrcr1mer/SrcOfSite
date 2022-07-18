@@ -8,9 +8,9 @@ if (iconBurger) {
 		if (iconBurger.classList.contains('active')) iconBurger.classList.add('reverse');
 		else iconBurger.classList.remove('reverse');
 
+		iconBurger.classList.toggle('active');
 		document.body.classList.toggle('burger-lock');
 		logoHeader.classList.toggle('active');
-		iconBurger.classList.toggle('active');
 		menu.classList.toggle('active');
 
 		// if (iconBurger.classList.contains('active')) {
@@ -40,7 +40,6 @@ if (iconBurger) {
 }
 
 
-
 // ========================MENU-ACTIVE===============================
 const menuItems = document.querySelectorAll('.menu__link');
 const local = window.location.href;
@@ -59,16 +58,22 @@ const aside = document.querySelector('.aside');
 const asideButton = document.querySelector('.aside__arrows');
 // Блок новостей
 const articles = document.querySelectorAll('.articles');
+// Блок отдельной новости 
+const article = document.querySelector('.current-news');
 if (asideButton) {
 	asideButton.addEventListener('click', change);
 	function change() {
 		aside.classList.toggle('active');
-		// Вешает на блоки новостей active
+		// Вешает на блоки новостей и турниров active
 		if (articles.length > 0) {
 			for (let index = 0; index < articles.length; index++) {
 				const article = articles[index];
 				article.classList.toggle('active');
 			}
+		}
+		// Вешает на блоки отдельной новости active
+		if (article) {
+			article.classList.toggle('active');
 		}
 	}
 }
@@ -99,28 +104,24 @@ if (popupTitles.length > 0) {
 
 // ========================PLACEHOLDER===============================
 const inputs = document.getElementsByTagName('input');
-const textareas = document.getElementsByTagName('textarea');
 if (inputs.length > 0) {
-	for (let index = 0; index < inputs.length; index++) {
-		const input = inputs[index];
-		const inputPlaceholder = input.placeholder;
-		input.addEventListener("focus", function (e) {
-			input.placeholder = "";
-		})
-		input.addEventListener("blur", function (e) {
-			input.placeholder = inputPlaceholder;
-		})
-	}
+	removePlaceholder(inputs);
 }
+
+const textareas = document.getElementsByTagName('textarea');
 if (textareas.length > 0) {
-	for (let index = 0; index < textareas.length; index++) {
-		const textarea = textareas[index];
-		const textareaPlaceholder = textarea.placeholder;
-		textarea.addEventListener("focus", function (e) {
-			textarea.placeholder = "";
+	removePlaceholder(textareas);
+}
+
+function removePlaceholder(items) {
+	for (let index = 0; index < items.length; index++) {
+		const item = items[index];
+		const itemPlaceholder = item.placeholder;
+		item.addEventListener("focus", function (e) {
+			item.placeholder = "";
 		})
-		textarea.addEventListener("blur", function (e) {
-			textarea.placeholder = textareaPlaceholder;
+		item.addEventListener("blur", function (e) {
+			item.placeholder = itemPlaceholder;
 		})
 	}
 }

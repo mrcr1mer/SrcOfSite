@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"Редактировать команду"
+})
+
+<body>
+	<div class="wrapper">
+		<div class="bg"><img src="@img/bg.png" alt=""></div>
+		@@include('html/header.html',{})
+		<main class="main">
+			<div class="container">
+				<div class="main__body">
+					<section class="edit-team">
+						<form action="#" class="edit-team__form">
+							<div class="edit-team__body">
+								
+							</div>							
+						</form>
+						<div class="edit-team__buttons buttons">
+							<div class="buttons__column">
+								<a href="profile.html" class="buttons__button">Вернуться в профиль</a>
+							</div>
+							<div class="buttons__column">
+								<a href="#confirmRemovePopup" class="buttons__button popup-link">Удалить команду</a>
+							</div>
+						</div>
+					</section>
+					@@include('html/aside.html',{})
+				</div>
+			</div>
+		</main>
+		@@include('html/footer.html',{})
+		<a href="chat.html" class="icon-chat _icon-chat"></a>
+	</div>
+	@@include('html/popup.html',{})
+	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+	<script src="js/app.min.js"></script>
+</body>
+
+</html>

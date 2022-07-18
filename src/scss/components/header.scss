@@ -1,0 +1,440 @@
+.header {
+	margin: 0px 0px 40px 0px;
+	position: relative;
+	z-index: 5;
+	@media (max-width: 1024px) {
+		margin: 0px 0px 30px 0px;
+	}
+	@media (max-width: 767px) {
+		margin: 0px 0px 20px 0px;
+	}
+	@media (max-width: 479px) {
+		margin: 0px 0px 15px 0px;
+	}
+	// .header__top
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0px 0px 20px 0px;
+		position: relative;
+		z-index: 5;
+		min-height: 100px;
+		padding: 30px 0px 0px 0px;
+		@media (max-width: 1024px) {
+			padding: 20px 0px 0px 0px;
+			margin: 0px 0px 0px 0px;
+			min-height: 110px;
+			&::before {
+				content: "";
+				background-color: #191919;
+				width: 100%;
+				position: fixed;
+				top: 0px;
+				left: -100%;
+				height: 130px;
+				transition: all 0.5s ease 0s;
+			}
+			&.active {
+				&::before {
+					left: 0;
+				}
+			}
+		}
+		@media (max-width: 767px) {
+			padding: 15px 0px 0px 0px;
+			min-height: 95px;
+			&::before {
+				height: 110px;
+			}
+		}
+		@media (max-width: 479px) {
+			padding: 10px 0px 0px 0px;
+			min-height: 70px;
+			&::before {
+				height: 80px;
+			}
+		}
+	}
+	// .header__logo-wrapper
+	&__logo-wrapper {
+		@media (max-width: 1024px) {
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%, 0);
+			display: flex;
+			align-items: center;
+		}
+	}
+	// .header__logo
+	&__logo {
+		position: relative;
+		width: 100px;
+		height: 100px;
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+		}
+		@media (max-width: 1024px) {
+			height: 90px;
+			width: 90px;
+		}
+		@media (max-width: 767px) {
+			height: 80px;
+			width: 80px;
+		}
+		@media (max-width: 479px) {
+			height: 60px;
+			width: 60px;
+		}
+	}
+	// .header__name-adaptive
+	&__name-adaptive {
+		display: none;
+		font-family: "Bebas Neue";
+		font-size: 55px;
+		letter-spacing: 0.15em;
+		color: #fff;
+		@media (max-width: 1024px) {
+			display: block;
+		}
+		@media (max-width: 767px) {
+			font-size: 50px;
+			letter-spacing: 0.1em;
+		}
+		@media (max-width: 479px) {
+			letter-spacing: 0.05em;
+			font-size: 40px;
+		}
+	}
+	// .header__name
+	&__name {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, 0);
+		font-weight: 700;
+		font-size: 45px;
+		color: #fff;
+		letter-spacing: 0.2em;
+		white-space: nowrap;
+		@media (max-width: 1024px) {
+			display: none;
+		}
+	}
+	// .header__buttons
+	&__buttons {
+		position: relative;
+		z-index: 5;
+		@media (max-width: 1024px) {
+			order: 1;
+		}
+	}
+	// .header__btn
+	&__btn {
+		font-weight: 600;
+		font-size: 20px;
+		background-color: transparent;
+		border: 2px solid #fff;
+		color: #fff;
+		padding: 10px;
+		min-width: 165px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		transition: all 0.4s ease 0s;
+		@media (min-width: 1025px) {
+			&:hover {
+				background-color: $mainColor;
+				border: 2px solid $mainColor;
+			}
+		}
+		@media (max-width: 1024px) {
+			min-width: 140px;
+			font-size: 18px;
+		}
+		@media (max-width: 767px) {
+			font-size: 15px;
+			padding: 8px;
+			min-width: 100px;
+		}
+		@media (max-width: 479px) {
+			min-width: 80px;
+			padding: 6px;
+			font-size: 12px;
+			border: 2px solid #fff;
+		}
+		@media (max-width: 340px) {
+			padding: 5px;
+			min-width: 65px;
+			font-size: 10px;
+		}
+		// .header__btn_in
+		&_in {
+			display: none;
+		}
+		// .header__btn_up
+		&_up {
+			display: none;
+		}
+	}
+	// .header__avatar
+	&__avatar {
+		display: inline-block;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		overflow: hidden;
+		position: relative;
+		transition: all 0.4s ease 0s;
+		@media (min-width: 1025px) {
+			&:hover {
+				filter: brightness(1.5);
+			}
+		}
+		@media (max-width: 1024px) {
+			height: 75px;
+			width: 75px;
+		}
+		@media (max-width: 767px) {
+			height: 65px;
+			width: 65px;
+		}
+		@media (max-width: 479px) {
+			height: 50px;
+			width: 50px;
+		}
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+		}
+	}
+	// .header__icon
+	&__icon {
+		@media (max-width: 1024px) {
+			order: 2;
+		}
+	}
+	// .header__bottom
+	&__bottom {
+	}
+	// .header__menu
+	&__menu {
+	}
+}
+
+//===============================MENU===================================
+
+.menu {
+	border-top: 5px solid $mainColor;
+	@media (max-width: 1024px) {
+		border-top: none;
+		position: fixed;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background-color: #202020;
+		transition: left 0.5s ease 0s;
+		overflow: auto;
+		padding: 180px 20px 20px;
+		z-index: 4;
+		&.active {
+			left: 0;
+		}
+	}
+	@media (max-width: 767px) {
+		padding: 150px 20px 20px;
+	}
+	@media (max-width: 479px) {
+		padding: 110px 20px 20px;
+	}
+	// .menu__list
+	&__list {
+		display: flex;
+		li {
+			flex: 0 1 25%;
+			&:nth-child(5) {
+				display: none;
+				@media (max-width: 1024px) {
+					display: block;
+				}
+			}
+			@media (min-width: 1025px) {
+				min-height: 60px;
+			}
+			@media (min-width: 1551px) {
+				min-height: 70px;
+			}
+		}
+		@media (max-width: 1024px) {
+			display: block;
+		}
+	}
+	// .menu__link
+	&__link {
+		color: #fff;
+		font-weight: 900;
+		font-size: 24px;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		padding: 10px 20px;
+		transition: background-color 0.4s ease 0s;
+		@media (min-width: 1025px) {
+			&:hover {
+				background-color: $mainColor;
+			}
+			&.active {
+				transition: all 0s ease 0s;
+				background-color: $mainColor;
+			}
+		}
+		@media (max-width: 1024px) {
+			font-size: 35px;
+			font-weight: 700;
+			padding: 0;
+			margin: 0px 0px 40px 0px;
+		}
+		@media (max-width: 767px) {
+			font-size: 30px;
+			margin: 0px 0px 35px 0px;
+		}
+		@media (max-width: 479px) {
+			margin: 0px 0px 30px 0px;
+			font-size: 25px;
+		}
+	}
+}
+
+//===============================BURGER===================================
+
+.icon-header {
+	display: none;
+	@media (max-width: 1024px) {
+		display: block;
+		background-color: transparent;
+		position: relative;
+		z-index: 5;
+		width: 40px;
+		height: 30px;
+		cursor: pointer;
+		span,
+		&::before,
+		&::after {
+			background-color: #fff;
+			position: absolute;
+			width: 100%;
+			height: 3px;
+			left: 0;
+			transition: all 0.3s ease 0s;
+		}
+		&::before,
+		&::after {
+			content: "";
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: 50%;
+			transform: scale(1) translate(0, -50%);
+		}
+		&.active {
+			span {
+				transform: scale(0);
+			}
+			&::before {
+				top: 50%;
+				transform: translate(0, -50%);
+				animation: rotateBefore 0.3s ease 0.3s forwards;
+			}
+			&::after {
+				bottom: 50%;
+				transform: translate(0, 50%);
+				animation: rotateAfter 0.3s ease 0.3s forwards;
+			}
+			@keyframes rotateBefore {
+				0% {
+					transform: translate(0, -50%) rotate(0deg);
+				}
+				100% {
+					transform: translate(0, -50%) rotate(-135deg);
+				}
+			}
+			@keyframes rotateAfter {
+				0% {
+					transform: translate(0, 50%) rotate(0deg);
+				}
+				100% {
+					transform: translate(0, 50%) rotate(-225deg);
+				}
+			}
+		}
+		&.reverse {
+			span {
+				transform: scale(1) translate(0, -50%);
+				transition: all 0.3s ease 0.3s;
+			}
+			&::before {
+				top: 0%;
+				animation: rotateBeforeReverse 0.3s ease 0s forwards, rotateBeforeReverse2 0.3s ease 0.3s forwards;
+				transition: all 0.3s ease 0.3s;
+			}
+			&::after {
+				bottom: 0%;
+				animation: rotateAfterReverse 0.3s ease 0s forwards, rotateAfterReverse2 0.3s ease 0.3s forwards;
+				transition: all 0.3s ease 0.3s;
+			}
+			@keyframes rotateBeforeReverse {
+				0% {
+					transform: translate(0, -50%) rotate(-135deg);
+				}
+				100% {
+					transform: translate(0, -50%) rotate(0deg);
+				}
+			}
+			@keyframes rotateAfterReverse {
+				0% {
+					transform: translate(0, 50%) rotate(-225deg);
+				}
+				100% {
+					transform: translate(0, 50%) rotate(0deg);
+				}
+			}
+
+			@keyframes rotateBeforeReverse2 {
+				100% {
+					transform: translate(0, 0%);
+				}
+			}
+			@keyframes rotateAfterReverse2 {
+				100% {
+					transform: translate(0, 0%);
+				}
+			}
+		}
+	}
+	@media (max-width: 479px) {
+		width: 30px;
+		height: 20px;
+		span,
+		&::before,
+		&::after {
+			height: 2px;
+		}
+	}
+}

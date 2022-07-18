@@ -16,16 +16,17 @@ function isWebp() {
 isWebp();
 
 
-// ========================IBG===============================
-function ibg() {
-	let ibg = document.querySelectorAll(".ibg");
-	for (let i = 0; i < ibg.length; i++) {
-		if (ibg[i].querySelector('img')) {
-			ibg[i].style.backgroundImage = 'url(' + ibg[i].querySelector('img').getAttribute('src') + ')';
-		}
-	}
+// ========================100VH-MOBILE===============================
+function mobile100vh() {
+	let vh = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
+	
+	window.addEventListener('resize', () => {
+		let vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+	 });
 }
-ibg();
+mobile100vh(); 
 
 
 // ========================CHECK-EMAIL===============================
