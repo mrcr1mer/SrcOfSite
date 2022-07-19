@@ -1,7 +1,7 @@
 //=========================================================GOOGLE-FONTS==================================================================//
 //&display=swap&subset=cyrillic-ext
-@import url(https://fonts.googleapis.com/css?family=Bebas+Neue:regular&display=swap&subset=cyrillic-ext);
-@import url(https://fonts.googleapis.com/css?family=Montserrat:300,regular,500,600,700,800,900&display=swap&subset=cyrillic-ext);
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue:regular&display=swap&subset=cyrillic-ext");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,regular,500,600,700,800,900&display=swap&subset=cyrillic-ext");
 //===========================================================================================================================//
 
 //========================================================VARS===================================================================//
@@ -52,9 +52,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	> * {
-		min-width: 0;
-	}
 }
 //===========================================================================================================================//
 
@@ -97,7 +94,6 @@ body {
 @import "pages/home";
 @import "pages/chat";
 @import "pages/members";
-@import "pages/clan";
 @import "pages/articles";
 @import "pages/currentNews";
 @import "pages/profile";

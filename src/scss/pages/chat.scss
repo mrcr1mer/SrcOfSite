@@ -142,15 +142,13 @@
 	// .chat__user
 	&__user {
 		display: flex;
-		transition: all 0.2s ease 0s;
+		transition: all 0.2s ease 0s;	
+		margin: 0px 0px 15px 0px;
 		transform: scale(1) translate(0, 120%);
 		opacity: 0;
-		visibility: hidden;
-		margin: 0px 0px 15px 0px;
 		&.send {
 			transform: scale(1) translate(0, 0%);
 			opacity: 1;
-			visibility: visible;
 		}
 		@media (max-width: 767px) {
 			margin: 0px 0px 10px 0px;

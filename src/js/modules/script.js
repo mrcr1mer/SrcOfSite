@@ -60,6 +60,8 @@ const asideButton = document.querySelector('.aside__arrows');
 const articles = document.querySelectorAll('.articles');
 // Блок отдельной новости 
 const article = document.querySelector('.current-news');
+// Блок редактировать команду
+const editTeam = document.querySelector('.players__items');
 if (asideButton) {
 	asideButton.addEventListener('click', change);
 	function change() {
@@ -74,6 +76,10 @@ if (asideButton) {
 		// Вешает на блоки отдельной новости active
 		if (article) {
 			article.classList.toggle('active');
+		}
+		// Вешает на блок players__items active
+		if (editTeam) {
+			editTeam.classList.toggle('active');
 		}
 	}
 }

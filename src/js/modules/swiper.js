@@ -9,7 +9,7 @@ new Swiper('.about-swiper', {
 		dynamicBullets: true,
 	},
 	autoplay: {
-		delay: 3000,
+		delay: 3500,
 		stopOnLastSlide: false,
 		disableOnInteraction: false,
 	},

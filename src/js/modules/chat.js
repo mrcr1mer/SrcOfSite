@@ -34,60 +34,13 @@ const scrollButton = document.querySelector('.chat__scroll-button');
 if (scrollButton) {
 	scrollDown(scrollButton, chatContent);
 }
-/*
-if (scrollButton) {
-	const scrollChatContent = chatContent.scrollTop - 100;
-	chatContent.addEventListener("scroll", () => {
-		const currentScrollChatContent = chatContent.scrollTop;
-		if (currentScrollChatContent <= scrollChatContent) {
-			scrollButton.style.opacity = 1;
-			scrollButton.style.visibility = "visible";
-			scrollButton.style.transform = 'translate(' + 0 + ',' + 0 + ')';
-		} else {
-			scrollButton.style.opacity = 0;
-			scrollButton.style.visibility = "hidden";
-			scrollButton.style.transform = 'translate(' + 0 + ',' + 120 + '%' + ')';
-		}
-	})
-	scrollButton.addEventListener("click", () => {
-		chatContent.scrollTo({
-			top: chatContent.scrollHeight,
-			behavior: "smooth"
-		})
-	});
-}
-*/
 
 // Чат сайдбара
 const scrollButtonAside = document.querySelector('.chat-aside__scroll-button');
 if (scrollButtonAside) {
 	scrollDown(scrollButtonAside, chatAsideContent);
 }
-/*
-if (scrollButtonAside) {
-	const scrollChatAsideContent = chatAsideContent.scrollTop - 700;
-	//console.log(scrollChatAsideContent + 'скролл');
-	chatAsideContent.addEventListener("scroll", () => {
-		const currentScrollChatAsideContent = chatAsideContent.scrollTop;
-		//console.log(currentScrollChatAsideContent);
-		if (currentScrollChatAsideContent <= scrollChatAsideContent) {
-			scrollButtonAside.style.opacity = 1;
-			scrollButtonAside.style.visibility = "visible";
-			scrollButtonAside.style.transform = 'translate(' + 0 + ',' + 0 + ')';
-		} else {
-			scrollButtonAside.style.opacity = 0;
-			scrollButtonAside.style.visibility = "hidden";
-			scrollButtonAside.style.transform = 'translate(' + 0 + ',' + 120 + '%' + ')';
-		}
-	})
-	scrollButtonAside.addEventListener("click", () => {
-		chatAsideContent.scrollTo({
-			top: chatAsideContent.scrollHeight,
-			behavior: "smooth"
-		})
-	});
-}
-*/
+
 function scrollDown(scrollButton, chatContent) {
 	const scrollContent = chatContent.scrollTop - 100;
 	chatContent.addEventListener("scroll", () => {
@@ -118,6 +71,25 @@ if (goBack) {
 		history.back()
 	})
 }
+
+
+// ========================AnimationBlocked===============================
+const blockedChat = document.querySelector('.chat-aside__body.blocked');
+if (blockedChat) {
+	let blockedChatTitle = document.createElement('span');
+	blockedChatTitle.innerHTML = `Вы не вошли в аккаунт`;
+	blockedChat.prepend(blockedChatTitle);
+
+	blockedChat.addEventListener("click", () => {
+		blockedChat.classList.add('active');
+		setTimeout(() => {
+			blockedChat.classList.remove('active');
+		}, 1000);
+	})
+}
+
+
+
 
 
 // let scrollHeight = Math.max(

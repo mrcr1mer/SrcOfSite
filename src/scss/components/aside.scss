@@ -5,9 +5,9 @@
 	border-left: 5px solid $mainColor;
 	padding: 10px 0px 10px 5px;
 	transition: all 0.9s ease 0s;
-	min-height: 950px;
+	min-height: 960px;
 	&_big {
-		min-height: 985px;
+		min-height: 990px;
 	}
 	@media (max-width: 1024px) {
 		display: none;
@@ -60,6 +60,8 @@
 		}
 		.aside__icon-chat {
 			display: none;
+		}
+		.chat-aside__user {
 		}
 	}
 	// .aside__body
@@ -246,8 +248,8 @@
 }
 
 .title-aside {
-	font-weight: 900;
-	font-size: 24px;
+	font-weight: 700;
+	font-size: 28px;
 	display: block;
 	color: #fff;
 	transition: all 0.4s ease 0s;
@@ -327,21 +329,81 @@
 		justify-content: flex-end;
 		&.blocked {
 			position: relative;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			&::before{
-				content: '';
+			cursor: pointer;
+			> span {
+				position: absolute;
+				z-index: 3;
+				font-size: 20px;
+				letter-spacing: 1px;
+				width: 60%;
+				font-weight: 700;
+				text-align: center;
+				line-height: 120%;
+				bottom: 38%;
+				left: 50%;
+				transform: translate(-50%, 0);
+			}
+			&::before {
+				content: "";
 				position: absolute;
 				width: 100%;
 				height: 100%;
 				top: 0%;
 				left: 0%;
-				background-color: #111111;	
-				z-index: 5;		
+				background-color: #101010;
+				z-index: 2;
+				box-shadow: 0px 0px 10px #fff inset;
 			}
-			.chat-aside__content {
-				overflow-y: hidden;
+			&::after {
+				content: "";
+				background: url("../img/icons/block.svg") center / cover no-repeat;
+				position: absolute;
+				width: 80px;
+				height: 80px;
+				z-index: 3;
+				top: 35%;
+				left: 50%;
+				transform: translate(-50%, 0%);
+			}
+			&.active {
+				&::after {
+					animation: blockedAnim 1s ease;
+				}
+				@keyframes blockedAnim {
+					0% {
+						transform: translate(-50%, 0%) rotate(0deg);
+					}
+					10% {
+						transform: translate(-50%, 0%) rotate(10deg);
+					}
+					20% {
+						transform: translate(-50%, 0%) rotate(-10deg);
+					}
+					30% {
+						transform: translate(-50%, 0%) rotate(10deg);
+					}
+					40% {
+						transform: translate(-50%, 0%) rotate(-10deg);
+					}
+					50% {
+						transform: translate(-50%, 0%) rotate(10deg);
+					}
+					60% {
+						transform: translate(-50%, 0%) rotate(-10deg);
+					}
+					70% {
+						transform: translate(-50%, 0%) rotate(10deg);
+					}
+					80% {
+						transform: translate(-50%, 0%) rotate(-10deg);
+					}
+					90% {
+						transform: translate(-50%, 0%) rotate(10deg);
+					}
+					100% {
+						transform: translate(-50%, 0%) rotate(0deg);
+					}
+				}
 			}
 		}
 	}
@@ -374,11 +436,9 @@
 		transition: all 0.2s ease 0s;
 		transform: scale(1) translate(0, 120%);
 		opacity: 0;
-		visibility: hidden;
 		&.send {
 			transform: scale(1) translate(0, 0%);
 			opacity: 1;
-			visibility: visible;
 		}
 		&_me {
 			.chat-aside__user-data {
